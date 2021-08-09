@@ -10,8 +10,6 @@ import UIKit
 class NewsViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     var newsModel: NewsModel?
-    var countryCode = ""
-    var favoriteCategories: [String] = []
 
     override func viewDidLoad() {
         registerCell()
@@ -38,19 +36,12 @@ class NewsViewController: UIViewController {
                            forCellReuseIdentifier: UIConstants.articleCellID)
     }
 
-    func initializeUserPreferences(
-        countryCode: String,
-        favoriteCategories: [String]) {
-        self.countryCode = countryCode
-        self.favoriteCategories = favoriteCategories
-    }
-
     func fetchNewsData(completion: @escaping (Result<NewsModel, Error>) -> Void) {
         guard let urlComponents = NSURLComponents(string: RequestConstants.baseURL) else {
             return
         }
         urlComponents.queryItems = [
-            URLQueryItem(name: "country", value: countryCode)
+            URLQueryItem(name: "country", value: UserDefaults.country)
         ]
         guard let url = urlComponents.url else { return }
         var request = URLRequest(url: url)

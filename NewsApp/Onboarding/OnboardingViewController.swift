@@ -13,7 +13,6 @@ class OnboardingViewController: UIViewController {
     var pickerView: UIPickerView?
     var toolBar: UIToolbar?
     var countries: [String: String] = [:]
-    var selectedCountryCode: String = ""
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,16 +21,8 @@ class OnboardingViewController: UIViewController {
     }
 
     @IBAction func startButtonDidPress(_ sender: UIButton) {
-        let storyboard = UIStoryboard(name: "News", bundle: .main)
-
-        guard let newsViewController = storyboard.instantiateViewController(withIdentifier: "NewsViewController") as? NewsViewController else {
-            return
-        }
-        newsViewController.modalPresentationStyle = .fullScreen
-        newsViewController.initializeUserPreferences(
-            countryCode: selectedCountryCode,
-            favoriteCategories: [])
-        present(newsViewController, animated: true, completion: nil)
+        presentNewsViewController()
+        UserDefaults.shouldSkipOnboarding = true
     }
 }
 
@@ -92,7 +83,7 @@ extension OnboardingViewController {
            0..<countries.count ~= selectedRow {
             let index = countries.index(countries.startIndex, offsetBy: selectedRow)
             countriesTextField.text = countries.keys[index]
-            selectedCountryCode = countries.values[index]
+            UserDefaults.country = countries.values[index]
         }
     }
 
