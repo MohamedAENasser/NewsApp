@@ -1,24 +1,67 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Onboarding View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="OnboardingViewController" customModule="NewsApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tHL-ZY-c8I">
+                                <rect key="frame" x="76.5" y="142" width="261.5" height="34"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please select your country" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D2E-zq-Tk0">
+                                        <rect key="frame" x="30" y="6.5" width="201.5" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0DV-vq-apq" userLabel="Countries Text Field">
+                                        <rect key="frame" x="0.0" y="0.0" width="261.5" height="34"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstItem="D2E-zq-Tk0" firstAttribute="centerX" secondItem="tHL-ZY-c8I" secondAttribute="centerX" id="0tH-Y3-Hs6"/>
+                                    <constraint firstItem="0DV-vq-apq" firstAttribute="leading" secondItem="tHL-ZY-c8I" secondAttribute="leading" id="EpF-LF-CSh"/>
+                                    <constraint firstItem="D2E-zq-Tk0" firstAttribute="centerY" secondItem="tHL-ZY-c8I" secondAttribute="centerY" id="IUV-sa-lHT"/>
+                                    <constraint firstAttribute="trailing" secondItem="0DV-vq-apq" secondAttribute="trailing" id="Mfk-43-9xI"/>
+                                    <constraint firstItem="0DV-vq-apq" firstAttribute="top" secondItem="tHL-ZY-c8I" secondAttribute="top" id="Qy0-VB-gFT"/>
+                                    <constraint firstAttribute="bottom" secondItem="0DV-vq-apq" secondAttribute="bottom" id="ZgT-CU-DIZ"/>
+                                </constraints>
+                            </view>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="tHL-ZY-c8I" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.631643" id="9Lv-aJ-Vt2"/>
+                            <constraint firstItem="tHL-ZY-c8I" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="F7k-rJ-Ylx"/>
+                            <constraint firstItem="tHL-ZY-c8I" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="98" id="KQ2-fj-9gD"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="countriesTextField" destination="0DV-vq-apq" id="bcX-Eq-xnz"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="-123.18840579710145" y="84.375"/>
         </scene>
     </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
 </document>
