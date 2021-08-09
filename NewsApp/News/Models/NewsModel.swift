@@ -23,6 +23,7 @@ struct ArticleModel: Codable {
     var source: SourceModel
     var author: String?
     var title: String?
+    var description: String?
     var url: String?
     var urlToImage: String?
     var publishedAt: String?
@@ -32,6 +33,7 @@ struct ArticleModel: Codable {
         case source
         case author
         case title
+        case description
         case url
         case urlToImage
         case publishedAt

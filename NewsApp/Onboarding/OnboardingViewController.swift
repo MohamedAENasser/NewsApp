@@ -22,12 +22,15 @@ class OnboardingViewController: UIViewController {
     }
 
     @IBAction func startButtonDidPress(_ sender: UIButton) {
-        let storyboard = UIStoryboard(name: "NewsStoryboard", bundle: .main)
+        let storyboard = UIStoryboard(name: "News", bundle: .main)
 
         guard let newsViewController = storyboard.instantiateViewController(withIdentifier: "NewsViewController") as? NewsViewController else {
             return
         }
         newsViewController.modalPresentationStyle = .fullScreen
+        newsViewController.initializeUserPreferences(
+            countryCode: selectedCountryCode,
+            favoriteCategories: [])
         present(newsViewController, animated: true, completion: nil)
     }
 }
