@@ -6,7 +6,6 @@
 //
 
 import UIKit
-import Foundation
 
 class OnboardingViewController: UIViewController {
     @IBOutlet weak var countriesTextField: UITextField!
@@ -15,12 +14,21 @@ class OnboardingViewController: UIViewController {
     var toolBar: UIToolbar?
     var countries: [String: String] = [:]
     var selectedCountryCode: String = ""
-    
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         setupCountryTextField()
+    }
+
+    @IBAction func startButtonDidPress(_ sender: UIButton) {
+        let storyboard = UIStoryboard(name: "NewsStoryboard", bundle: .main)
+
+        guard let newsViewController = storyboard.instantiateViewController(withIdentifier: "NewsViewController") as? NewsViewController else {
+            return
+        }
+        newsViewController.modalPresentationStyle = .fullScreen
+        present(newsViewController, animated: true, completion: nil)
     }
 }
 

@@ -17,30 +17,36 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tHL-ZY-c8I">
-                                <rect key="frame" x="76.5" y="142" width="261.5" height="34"/>
+                                <rect key="frame" x="76.5" y="142" width="261.5" height="30"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please select your country" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D2E-zq-Tk0">
-                                        <rect key="frame" x="30" y="6.5" width="201.5" height="21"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0DV-vq-apq" userLabel="Countries Text Field">
-                                        <rect key="frame" x="0.0" y="0.0" width="261.5" height="34"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="261.5" height="30"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
-                                    <constraint firstItem="D2E-zq-Tk0" firstAttribute="centerX" secondItem="tHL-ZY-c8I" secondAttribute="centerX" id="0tH-Y3-Hs6"/>
                                     <constraint firstItem="0DV-vq-apq" firstAttribute="leading" secondItem="tHL-ZY-c8I" secondAttribute="leading" id="EpF-LF-CSh"/>
-                                    <constraint firstItem="D2E-zq-Tk0" firstAttribute="centerY" secondItem="tHL-ZY-c8I" secondAttribute="centerY" id="IUV-sa-lHT"/>
                                     <constraint firstAttribute="trailing" secondItem="0DV-vq-apq" secondAttribute="trailing" id="Mfk-43-9xI"/>
+                                    <constraint firstAttribute="height" constant="30" id="On1-Rj-qM3"/>
                                     <constraint firstItem="0DV-vq-apq" firstAttribute="top" secondItem="tHL-ZY-c8I" secondAttribute="top" id="Qy0-VB-gFT"/>
                                     <constraint firstAttribute="bottom" secondItem="0DV-vq-apq" secondAttribute="bottom" id="ZgT-CU-DIZ"/>
                                 </constraints>
                             </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please select your country" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D2E-zq-Tk0">
+                                <rect key="frame" x="76.5" y="101" width="201.5" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZLD-BS-pAc">
+                                <rect key="frame" x="190" y="438" width="34" height="30"/>
+                                <state key="normal" title="Start"/>
+                                <connections>
+                                    <action selector="startButtonDidPress:" destination="BYZ-38-t0r" eventType="touchUpInside" id="wfh-Bt-pbx"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -48,6 +54,10 @@
                             <constraint firstItem="tHL-ZY-c8I" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.631643" id="9Lv-aJ-Vt2"/>
                             <constraint firstItem="tHL-ZY-c8I" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="F7k-rJ-Ylx"/>
                             <constraint firstItem="tHL-ZY-c8I" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="98" id="KQ2-fj-9gD"/>
+                            <constraint firstItem="ZLD-BS-pAc" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="e2M-ga-v0P"/>
+                            <constraint firstItem="tHL-ZY-c8I" firstAttribute="top" secondItem="D2E-zq-Tk0" secondAttribute="bottom" constant="20" id="fys-hr-qcB"/>
+                            <constraint firstItem="D2E-zq-Tk0" firstAttribute="leading" secondItem="tHL-ZY-c8I" secondAttribute="leading" id="jmI-0T-Md1"/>
+                            <constraint firstItem="ZLD-BS-pAc" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="yZ9-Uz-Xs8"/>
                         </constraints>
                     </view>
                     <connections>
