@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="BottomItemView" customModule="NewsApp" customModuleProvider="target">
+            <connections>
+                <outlet property="contentView" destination="iN0-l3-epB" id="YUN-a1-Psu"/>
+                <outlet property="imageView" destination="ekZ-rK-fdB" id="Ip4-hQ-3Ie"/>
+                <outlet property="titleLabel" destination="map-Sh-R2S" id="yKV-FD-meZ"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="713" height="381"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oje-F2-LJL" userLabel="Container View">
+                    <rect key="frame" x="0.0" y="0.0" width="713" height="381"/>
+                    <subviews>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ekZ-rK-fdB">
+                            <rect key="frame" x="223" y="0.0" width="267" height="266.5"/>
+                            <constraints>
+                                <constraint firstAttribute="width" secondItem="ekZ-rK-fdB" secondAttribute="height" multiplier="1:1" id="ehb-3r-IWg"/>
+                            </constraints>
+                        </imageView>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="map-Sh-R2S">
+                            <rect key="frame" x="336" y="266.5" width="41.5" height="114.5"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="x1T-OU-Bpk">
+                            <rect key="frame" x="0.0" y="0.0" width="713" height="381"/>
+                            <connections>
+                                <action selector="buttonDidPress:" destination="-1" eventType="touchUpInside" id="hfa-f5-09X"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstItem="map-Sh-R2S" firstAttribute="top" secondItem="ekZ-rK-fdB" secondAttribute="bottom" id="11J-Zb-hAc"/>
+                        <constraint firstItem="ekZ-rK-fdB" firstAttribute="height" secondItem="oje-F2-LJL" secondAttribute="height" multiplier="0.7" id="2i9-US-MTJ"/>
+                        <constraint firstItem="ekZ-rK-fdB" firstAttribute="centerX" secondItem="oje-F2-LJL" secondAttribute="centerX" id="Kpc-xG-GuC"/>
+                        <constraint firstItem="x1T-OU-Bpk" firstAttribute="top" secondItem="oje-F2-LJL" secondAttribute="top" id="Lwh-pt-v6c"/>
+                        <constraint firstItem="ekZ-rK-fdB" firstAttribute="top" secondItem="oje-F2-LJL" secondAttribute="top" id="N9A-aJ-FEQ"/>
+                        <constraint firstAttribute="bottom" secondItem="x1T-OU-Bpk" secondAttribute="bottom" id="Zss-Gl-Buw"/>
+                        <constraint firstItem="map-Sh-R2S" firstAttribute="centerX" secondItem="oje-F2-LJL" secondAttribute="centerX" id="f0v-J0-OAP"/>
+                        <constraint firstItem="x1T-OU-Bpk" firstAttribute="leading" secondItem="oje-F2-LJL" secondAttribute="leading" id="jCD-tg-8Ns"/>
+                        <constraint firstAttribute="trailing" secondItem="x1T-OU-Bpk" secondAttribute="trailing" id="lMn-SX-Jmg"/>
+                        <constraint firstAttribute="bottom" secondItem="map-Sh-R2S" secondAttribute="bottom" id="xxT-pp-hX1"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="oje-F2-LJL" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="QaL-bJ-2tE"/>
+                <constraint firstAttribute="bottom" secondItem="oje-F2-LJL" secondAttribute="bottom" id="Wcf-sy-d1p"/>
+                <constraint firstItem="oje-F2-LJL" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="tsG-j5-dgB"/>
+                <constraint firstAttribute="trailing" secondItem="oje-F2-LJL" secondAttribute="trailing" id="wwa-iB-rBS"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="103.62318840579711" y="-119.53125"/>
+        </view>
+    </objects>
+</document>

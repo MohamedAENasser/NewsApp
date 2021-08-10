@@ -29,6 +29,9 @@
 		D986ADB626C1F74C002B85D2 /* CategoryView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D986ADB526C1F74C002B85D2 /* CategoryView.xib */; };
 		D986ADB826C1F9AE002B85D2 /* CategoryViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D986ADB726C1F9AE002B85D2 /* CategoryViewDelegate.swift */; };
 		D986ADBA26C1FB58002B85D2 /* OnboardingViewController+CountryTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = D986ADB926C1FB58002B85D2 /* OnboardingViewController+CountryTextField.swift */; };
+		D9C4CC5326C2B97100CC519F /* ArticleCellDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9C4CC5226C2B97100CC519F /* ArticleCellDelegate.swift */; };
+		D9C4CC5626C2F33B00CC519F /* BottomItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9C4CC5526C2F33B00CC519F /* BottomItemView.swift */; };
+		D9C4CC5826C2F34200CC519F /* BottomItemView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D9C4CC5726C2F34200CC519F /* BottomItemView.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -77,6 +80,9 @@
 		D986ADB526C1F74C002B85D2 /* CategoryView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CategoryView.xib; sourceTree = "<group>"; };
 		D986ADB726C1F9AE002B85D2 /* CategoryViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryViewDelegate.swift; sourceTree = "<group>"; };
 		D986ADB926C1FB58002B85D2 /* OnboardingViewController+CountryTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OnboardingViewController+CountryTextField.swift"; sourceTree = "<group>"; };
+		D9C4CC5226C2B97100CC519F /* ArticleCellDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleCellDelegate.swift; sourceTree = "<group>"; };
+		D9C4CC5526C2F33B00CC519F /* BottomItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomItemView.swift; sourceTree = "<group>"; };
+		D9C4CC5726C2F34200CC519F /* BottomItemView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BottomItemView.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -127,7 +133,7 @@
 		D986AD5826C15C50002B85D2 /* NewsApp */ = {
 			isa = PBXGroup;
 			children = (
-				D986ADB126C1F47E002B85D2 /* Loading */,
+				D986AD9226C19B27002B85D2 /* Utils */,
 				D986ADAE26C1EC22002B85D2 /* Extensions */,
 				D986AD8A26C194E6002B85D2 /* News */,
 				D986AD8926C172ED002B85D2 /* Onboarding */,
@@ -174,7 +180,7 @@
 		D986AD8A26C194E6002B85D2 /* News */ = {
 			isa = PBXGroup;
 			children = (
-				D986AD9226C19B27002B85D2 /* Utils */,
+				D9C4CC5426C2F32E00CC519F /* BottomViewItem */,
 				D986AD8F26C19670002B85D2 /* Models */,
 				D986AD9726C1B9A9002B85D2 /* ArticleCell */,
 				D986AD8B26C19501002B85D2 /* News.storyboard */,
@@ -205,6 +211,7 @@
 			children = (
 				D986AD9826C1B9BF002B85D2 /* ArticleCell.xib */,
 				D986AD9A26C1B9C5002B85D2 /* ArticleCell.swift */,
+				D9C4CC5226C2B97100CC519F /* ArticleCellDelegate.swift */,
 			);
 			path = ArticleCell;
 			sourceTree = "<group>";
@@ -217,13 +224,6 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
-		D986ADB126C1F47E002B85D2 /* Loading */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Loading;
-			sourceTree = "<group>";
-		};
 		D986ADB226C1F73A002B85D2 /* Categroy */ = {
 			isa = PBXGroup;
 			children = (
@@ -232,6 +232,15 @@
 				D986ADB726C1F9AE002B85D2 /* CategoryViewDelegate.swift */,
 			);
 			path = Categroy;
+			sourceTree = "<group>";
+		};
+		D9C4CC5426C2F32E00CC519F /* BottomViewItem */ = {
+			isa = PBXGroup;
+			children = (
+				D9C4CC5526C2F33B00CC519F /* BottomItemView.swift */,
+				D9C4CC5726C2F34200CC519F /* BottomItemView.xib */,
+			);
+			path = BottomViewItem;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -339,6 +348,7 @@
 			files = (
 				D986AD6626C15C51002B85D2 /* LaunchScreen.storyboard in Resources */,
 				D986AD6326C15C51002B85D2 /* Assets.xcassets in Resources */,
+				D9C4CC5826C2F34200CC519F /* BottomItemView.xib in Resources */,
 				D986ADB626C1F74C002B85D2 /* CategoryView.xib in Resources */,
 				D986AD8C26C19501002B85D2 /* News.storyboard in Resources */,
 				D986ADA826C1E7C1002B85D2 /* Main.storyboard in Resources */,
@@ -374,9 +384,11 @@
 				D986ADB026C1EC38002B85D2 /* UserDefaults+Preferences.swift in Sources */,
 				D986AD9D26C1BA0A002B85D2 /* NewsViewController+TableView.swift in Sources */,
 				D986AD8E26C1950E002B85D2 /* NewsViewController.swift in Sources */,
+				D9C4CC5626C2F33B00CC519F /* BottomItemView.swift in Sources */,
 				D986AD9B26C1B9C5002B85D2 /* ArticleCell.swift in Sources */,
 				D986ADAA26C1E7D9002B85D2 /* MainViewController.swift in Sources */,
 				D986AD9126C19680002B85D2 /* NewsModel.swift in Sources */,
+				D9C4CC5326C2B97100CC519F /* ArticleCellDelegate.swift in Sources */,
 				D986ADB826C1F9AE002B85D2 /* CategoryViewDelegate.swift in Sources */,
 				D986AD9426C19B33002B85D2 /* RequestConstants.swift in Sources */,
 				D986ADBA26C1FB58002B85D2 /* OnboardingViewController+CountryTextField.swift in Sources */,
@@ -556,6 +568,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 4P66433BRV;
 				INFOPLIST_FILE = NewsApp/Info.plist;
@@ -565,6 +578,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.MohamedAENasser.NewsApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -575,6 +589,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 4P66433BRV;
 				INFOPLIST_FILE = NewsApp/Info.plist;
@@ -584,6 +599,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.MohamedAENasser.NewsApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

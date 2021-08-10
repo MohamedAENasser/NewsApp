@@ -7,11 +7,29 @@
 
 import UIKit
 
+enum DisplayedDataMode {
+    case home
+    case favorite
+}
 class NewsViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var bottomView: UIView!
+    @IBOutlet weak var bottomViewHeightConstraint: NSLayoutConstraint!
+    @IBOutlet weak var homeItemView: BottomItemView!
+    @IBOutlet weak var favoritesItemView: BottomItemView!
+
     var newsModel: NewsModel?
+    var favoritesModel: [ArticleModel] = []
+    var mode: DisplayedDataMode = .home {
+        didSet {
+            let range = NSMakeRange(0, self.tableView.numberOfSections)
+            let sections = NSIndexSet(indexesIn: range)
+            self.tableView.reloadSections(sections as IndexSet, with: .automatic)
+        }
+    }
 
     override func viewDidLoad() {
+        setupBottomView()
         registerCell()
         tableView.estimatedRowHeight = UIScreen.main.bounds.height
         tableView.rowHeight = UITableView.automaticDimension
@@ -20,6 +38,30 @@ class NewsViewController: UIViewController {
                 self.tableView.reloadData()
             }
         }
+    }
+
+    func setupBottomView() {
+        bottomViewHeightConstraint.constant = 70
+        if #available(iOS 11.0, *) {
+            bottomViewHeightConstraint.constant += view.safeAreaInsets.bottom
+        }
+        bottomView.layer.cornerRadius = 10
+        homeItemView.setup(titleText: "Home", imageName: "home", isSelected: true) { [weak self] in
+            guard let self = self else { return }
+            self.favoritesItemView.unSelect()
+            self.mode = .home
+        }
+        favoritesItemView.setup(titleText: "Favorites", imageName: "favorite") { [weak self] in
+            guard let self = self else { return }
+            self.homeItemView.unSelect()
+            self.mode = .favorite
+        }
+    }
+
+    @IBAction func resetButton(_ sender: UIButton) {
+        let domain = Bundle.main.bundleIdentifier!
+        UserDefaults.standard.removePersistentDomain(forName: domain)
+        UserDefaults.standard.synchronize()
     }
 
     func registerCell() {

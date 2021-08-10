@@ -9,9 +9,10 @@ import UIKit
 
 extension OnboardingViewController {
     func setupCountryTextField() {
-        Locale.isoRegionCodes.forEach { code in
-            countries[Locale.current.localizedString(forRegionCode: code) ?? ""] =
-                code
+        availableCountriesCodes.forEach { code in
+            if let name = Locale.current.localizedString(forRegionCode: code) {
+                countries[name] = code
+            }
         }
 
         pickerView = UIPickerView()

@@ -9,7 +9,12 @@ import UIKit
 
 extension NewsViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        newsModel?.articles.count ?? 0
+        switch mode {
+        case .home:
+            return newsModel?.articles.count ?? 0
+        case .favorite:
+            return favoritesModel.count
+        }
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -18,8 +23,17 @@ extension NewsViewController: UITableViewDataSource {
               indexPath.row < newsModel.articles.count else {
             return UITableViewCell()
         }
-
-        cell.setup(with: newsModel.articles[indexPath.row])
+        var article = ArticleModel()
+        switch mode {
+        case .home:
+            article = newsModel.articles[indexPath.row]
+        case .favorite:
+            article = favoritesModel[indexPath.row]
+        }
+        cell.setup(
+            with: article,
+            isFavorite: favoritesModel.contains(article),
+            delegate: self)
         return cell
     }
 }
@@ -27,5 +41,15 @@ extension NewsViewController: UITableViewDataSource {
 extension NewsViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         UITableView.automaticDimension
+    }
+}
+
+extension NewsViewController: ArticleCellDelegate {
+    func favoriteStatusDidChange(_ model: ArticleModel, _ newStatus: Bool) {
+        if newStatus {
+            favoritesModel.append(model)
+        } else {
+            favoritesModel = favoritesModel.filter { $0 != model }
+        }
     }
 }
