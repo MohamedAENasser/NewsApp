@@ -7,10 +7,6 @@
 
 import UIKit
 
-enum DisplayedDataMode {
-    case home
-    case favorite
-}
 class DashboardViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var bottomView: UIView!
@@ -20,7 +16,7 @@ class DashboardViewController: UIViewController {
 
     var newsModel: NewsModel?
     var favoritesModel: [ArticleModel] = []
-    var mode: DisplayedDataMode = .home {
+    var mode: DashboardMode = .home {
         didSet {
             let range = NSMakeRange(0, self.tableView.numberOfSections)
             let sections = NSIndexSet(indexesIn: range)

@@ -32,9 +32,9 @@ extension UIViewController {
     }
 
     func presentNewsViewController() {
-        let storyboard = UIStoryboard(name: "News", bundle: .main)
+        let storyboard = UIStoryboard(name: "Dashboard", bundle: .main)
 
-        guard let newsViewController = storyboard.instantiateViewController(withIdentifier: "NewsViewController") as? NewsViewController else {
+        guard let newsViewController = storyboard.instantiateViewController(withIdentifier: "DashboardViewController") as? DashboardViewController else {
             return
         }
         newsViewController.modalPresentationStyle = .fullScreen
