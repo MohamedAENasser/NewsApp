@@ -15,12 +15,18 @@ class CategoryView: UIView {
     func setup(name: String, delegate: CategoryViewDelegate?) {
         categoryNameLabel.text = name
         self.delegate = delegate
+        isSelectedImageView.image = isSelectedImageView.image?.withRenderingMode(.alwaysTemplate)
+        isSelectedImageView.tintColor = .systemGray3
     }
 
     @IBAction func viewDidPress(_ sender: UIButton) {
-        let isSelected =  !isSelectedImageView.isHidden
+        let isSelected =  isSelectedImageView.tintColor == .green
         if !(delegate?.isUpdateAllowed(isSelected: isSelected) ?? false) { return }
-        isSelectedImageView.isHidden.toggle()
+        if isSelected {
+            isSelectedImageView.tintColor = .systemGray3
+        } else {
+            isSelectedImageView.tintColor = .green
+        }
         delegate?.categoryDidPress(
             name: categoryNameLabel.text ?? "",
             isSelected: !isSelectedImageView.isHidden)

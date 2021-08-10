@@ -31,11 +31,17 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tHL-ZY-c8I">
                                                 <rect key="frame" x="114" y="100.5" width="186" height="30"/>
                                                 <subviews>
-                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0DV-vq-apq" userLabel="Countries Text Field">
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Select preffered country" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0DV-vq-apq" userLabel="Countries Text Field">
                                                         <rect key="frame" x="0.0" y="0.0" width="186" height="30"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits"/>
                                                     </textField>
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="downArrow" translatesAutoresizingMaskIntoConstraints="NO" id="ALf-lo-yNA">
+                                                        <rect key="frame" x="169" y="9" width="12" height="12"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" secondItem="ALf-lo-yNA" secondAttribute="height" multiplier="1:1" id="gvH-C3-Lex"/>
+                                                        </constraints>
+                                                    </imageView>
                                                 </subviews>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                 <constraints>
@@ -43,7 +49,10 @@
                                                     <constraint firstAttribute="trailing" secondItem="0DV-vq-apq" secondAttribute="trailing" id="Mfk-43-9xI"/>
                                                     <constraint firstAttribute="height" constant="30" id="On1-Rj-qM3"/>
                                                     <constraint firstItem="0DV-vq-apq" firstAttribute="top" secondItem="tHL-ZY-c8I" secondAttribute="top" id="Qy0-VB-gFT"/>
+                                                    <constraint firstItem="ALf-lo-yNA" firstAttribute="centerY" secondItem="tHL-ZY-c8I" secondAttribute="centerY" id="RMF-iy-hGI"/>
                                                     <constraint firstAttribute="bottom" secondItem="0DV-vq-apq" secondAttribute="bottom" id="ZgT-CU-DIZ"/>
+                                                    <constraint firstAttribute="trailing" secondItem="ALf-lo-yNA" secondAttribute="trailing" constant="5" id="jjl-bf-Zxp"/>
+                                                    <constraint firstItem="ALf-lo-yNA" firstAttribute="height" secondItem="tHL-ZY-c8I" secondAttribute="height" multiplier="0.4" id="llx-DX-P4T"/>
                                                 </constraints>
                                             </view>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please Select 3 Categories" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tBm-O6-sJD">
@@ -53,14 +62,26 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="mjG-MC-3Xn">
-                                                <rect key="frame" x="103.5" y="211.5" width="207" height="604.5"/>
+                                                <rect key="frame" x="103.5" y="211.5" width="207" height="493.5"/>
                                             </stackView>
+                                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You've reached the maximum number of categories, you can unselect any category and replace it by another one" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OYM-AC-5qf" userLabel="Warning Label">
+                                                <rect key="frame" x="41.5" y="715" width="331" height="61"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="30" id="Occ-lq-S7E"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" systemColor="systemRedColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZLD-BS-pAc" userLabel="Start Button">
-                                                <rect key="frame" x="103.5" y="836" width="207" height="40"/>
+                                                <rect key="frame" x="103.5" y="816" width="207" height="40"/>
+                                                <color key="backgroundColor" systemColor="systemGray2Color"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="40" id="Nx6-VK-wfJ"/>
                                                 </constraints>
-                                                <state key="normal" title="Start"/>
+                                                <state key="normal" title="Start">
+                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
                                                 <connections>
                                                     <action selector="startButtonDidPress:" destination="BYZ-38-t0r" eventType="touchUpInside" id="wfh-Bt-pbx"/>
                                                 </connections>
@@ -70,16 +91,19 @@
                                         <constraints>
                                             <constraint firstItem="tBm-O6-sJD" firstAttribute="top" secondItem="tHL-ZY-c8I" secondAttribute="bottom" constant="40" id="9K4-lF-Wtw"/>
                                             <constraint firstItem="tBm-O6-sJD" firstAttribute="centerX" secondItem="D2E-zq-Tk0" secondAttribute="centerX" id="Ch8-CQ-LgV"/>
+                                            <constraint firstItem="ZLD-BS-pAc" firstAttribute="top" secondItem="OYM-AC-5qf" secondAttribute="bottom" constant="40" id="E05-C5-Waa"/>
                                             <constraint firstItem="tHL-ZY-c8I" firstAttribute="centerX" secondItem="D2E-zq-Tk0" secondAttribute="centerX" id="Gma-XT-4uL"/>
-                                            <constraint firstAttribute="bottom" secondItem="ZLD-BS-pAc" secondAttribute="bottom" constant="20" id="KGm-FW-IRR"/>
+                                            <constraint firstAttribute="bottom" secondItem="ZLD-BS-pAc" secondAttribute="bottom" constant="40" id="KGm-FW-IRR"/>
                                             <constraint firstItem="mjG-MC-3Xn" firstAttribute="top" secondItem="tBm-O6-sJD" secondAttribute="bottom" constant="20" id="Myi-9Q-mZm"/>
                                             <constraint firstItem="tHL-ZY-c8I" firstAttribute="top" secondItem="D2E-zq-Tk0" secondAttribute="bottom" constant="20" id="PcN-9q-diM"/>
                                             <constraint firstItem="tHL-ZY-c8I" firstAttribute="width" secondItem="m2S-rt-qb5" secondAttribute="width" multiplier="0.45" id="Pw8-q9-Cna"/>
                                             <constraint firstItem="mjG-MC-3Xn" firstAttribute="width" secondItem="m2S-rt-qb5" secondAttribute="width" multiplier="0.5" id="Xhc-Ce-zcQ"/>
+                                            <constraint firstItem="OYM-AC-5qf" firstAttribute="width" secondItem="m2S-rt-qb5" secondAttribute="width" multiplier="0.8" id="cGJ-dh-fbM"/>
                                             <constraint firstItem="mjG-MC-3Xn" firstAttribute="centerX" secondItem="D2E-zq-Tk0" secondAttribute="centerX" id="cba-UW-sgG"/>
+                                            <constraint firstItem="OYM-AC-5qf" firstAttribute="centerX" secondItem="D2E-zq-Tk0" secondAttribute="centerX" id="hIV-HY-fFU"/>
                                             <constraint firstItem="ZLD-BS-pAc" firstAttribute="width" secondItem="m2S-rt-qb5" secondAttribute="width" multiplier="0.5" id="jGk-vs-nx0"/>
                                             <constraint firstItem="ZLD-BS-pAc" firstAttribute="centerX" secondItem="D2E-zq-Tk0" secondAttribute="centerX" id="mL0-UX-fbF"/>
-                                            <constraint firstItem="ZLD-BS-pAc" firstAttribute="top" secondItem="mjG-MC-3Xn" secondAttribute="bottom" constant="20" id="mkG-lK-nn3"/>
+                                            <constraint firstItem="OYM-AC-5qf" firstAttribute="top" secondItem="mjG-MC-3Xn" secondAttribute="bottom" constant="10" id="mkG-lK-nn3"/>
                                             <constraint firstItem="D2E-zq-Tk0" firstAttribute="centerX" secondItem="m2S-rt-qb5" secondAttribute="centerX" id="vdA-CN-F8j"/>
                                             <constraint firstItem="D2E-zq-Tk0" firstAttribute="top" secondItem="m2S-rt-qb5" secondAttribute="top" constant="60" id="whi-Xa-XBP"/>
                                         </constraints>
@@ -108,6 +132,8 @@
                     <connections>
                         <outlet property="categoriesStackView" destination="mjG-MC-3Xn" id="Wlr-C0-L7S"/>
                         <outlet property="countriesTextField" destination="0DV-vq-apq" id="bcX-Eq-xnz"/>
+                        <outlet property="startButton" destination="ZLD-BS-pAc" id="bc3-fE-NSB"/>
+                        <outlet property="warningLabel" destination="OYM-AC-5qf" id="E0v-bO-OMf"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -116,8 +142,15 @@
         </scene>
     </scenes>
     <resources>
+        <image name="downArrow" width="625" height="362"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGray2Color">
+            <color red="0.68235294117647061" green="0.68235294117647061" blue="0.69803921568627447" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemRedColor">
+            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

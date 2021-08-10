@@ -10,6 +10,8 @@ import UIKit
 class OnboardingViewController: UIViewController {
     @IBOutlet weak var countriesTextField: UITextField!
     @IBOutlet weak var categoriesStackView: UIStackView!
+    @IBOutlet weak var warningLabel: UILabel!
+    @IBOutlet weak var startButton: UIButton!
 
     var pickerView: UIPickerView?
     var toolBar: UIToolbar?
@@ -83,12 +85,14 @@ class OnboardingViewController: UIViewController {
     var selectedCategories: [String] = [] {
         didSet {
             UserDefaults.favoriteCategories = selectedCategories
+            warningLabel.isHidden = selectedCategories.count != 3
         }
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        startButton.layer.cornerRadius = startButton.frame.height / 2
         setupCountryTextField()
         setupCategories()
     }
@@ -111,7 +115,7 @@ class OnboardingViewController: UIViewController {
 
 extension OnboardingViewController: CategoryViewDelegate {
     func categoryDidPress(name: String, isSelected: Bool) {
-        if isSelected {
+        if isSelected, !selectedCategories.contains(name) {
             selectedCategories.append(name)
         } else {
             selectedCategories = selectedCategories.filter { $0 != name }

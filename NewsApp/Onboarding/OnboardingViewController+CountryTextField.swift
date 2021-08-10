@@ -9,6 +9,7 @@ import UIKit
 
 extension OnboardingViewController {
     func setupCountryTextField() {
+        countriesTextField.delegate = self
         availableCountriesCodes.forEach { code in
             if let name = Locale.current.localizedString(forRegionCode: code) {
                 countries[name] = code
@@ -90,5 +91,11 @@ extension OnboardingViewController: UIPickerViewDelegate {
     public func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         let index = countries.index(countries.startIndex, offsetBy: row)
         return countries.keys[index]
+    }
+}
+
+extension OnboardingViewController: UITextFieldDelegate {
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        false
     }
 }
