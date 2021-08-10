@@ -104,7 +104,7 @@ class OnboardingViewController: UIViewController {
     }
 
     @IBAction func startButtonDidPress(_ sender: UIButton) {
-        presentNewsViewController()
+        presentDashboardViewController()
         UserDefaults.shouldSkipOnboarding = true
     }
 }

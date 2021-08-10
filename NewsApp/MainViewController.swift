@@ -11,7 +11,7 @@ class MainViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         if UserDefaults.shouldSkipOnboarding {
-            presentNewsViewController()
+            presentDashboardViewController()
         } else {
             presentOnboardingViewController()
         }
@@ -31,7 +31,7 @@ extension UIViewController {
         }
     }
 
-    func presentNewsViewController() {
+    func presentDashboardViewController() {
         let storyboard = UIStoryboard(name: "Dashboard", bundle: .main)
 
         guard let newsViewController = storyboard.instantiateViewController(withIdentifier: "DashboardViewController") as? DashboardViewController else {
