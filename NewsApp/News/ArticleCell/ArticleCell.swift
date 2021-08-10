@@ -76,4 +76,11 @@ class ArticleCell: UITableViewCell {
         guard let model = model else { return }
         delegate?.favoriteStatusDidChange(model, isFavorite)
     }
+
+    @IBAction func cellButtonDidPress(_ sender: UIButton) {
+        guard let url = URL(string: model?.url ?? "") else {
+            return
+        }
+        UIApplication.shared.open(url)
+    }
 }

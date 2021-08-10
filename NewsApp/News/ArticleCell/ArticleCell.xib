@@ -54,6 +54,12 @@
                                 <constraint firstAttribute="height" constant="2" id="du2-pE-YrO"/>
                             </constraints>
                         </view>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="akG-oy-JTS" userLabel="Cell Button">
+                            <rect key="frame" x="0.0" y="0.0" width="459" height="482"/>
+                            <connections>
+                                <action selector="cellButtonDidPress:" destination="iN0-l3-epB" eventType="touchUpInside" id="z5U-Q9-y1R"/>
+                            </connections>
+                        </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MDx-80-Ykf" userLabel="Add To Favorites Button">
                             <rect key="frame" x="409" y="354.5" width="30" height="30"/>
                             <constraints>
@@ -71,11 +77,13 @@
                         <constraint firstItem="MDx-80-Ykf" firstAttribute="top" secondItem="ip4-1D-3Gm" secondAttribute="bottom" constant="10" id="07S-E6-DoK"/>
                         <constraint firstAttribute="trailing" secondItem="MDx-80-Ykf" secondAttribute="trailing" constant="20" id="AG4-Q8-qty"/>
                         <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="MDx-80-Ykf" secondAttribute="bottom" constant="10" id="ARL-PZ-Kc3"/>
+                        <constraint firstAttribute="trailing" secondItem="akG-oy-JTS" secondAttribute="trailing" id="CXW-2m-Npf"/>
                         <constraint firstItem="ip4-1D-3Gm" firstAttribute="top" secondItem="idR-MN-yBn" secondAttribute="bottom" constant="20" id="Grt-hu-TMt"/>
                         <constraint firstItem="w3q-Wx-Yif" firstAttribute="trailing" secondItem="LMV-2X-5wG" secondAttribute="trailing" id="JYM-nR-bWH"/>
                         <constraint firstItem="dH6-L8-4ZJ" firstAttribute="bottom" secondItem="bhq-rD-KhZ" secondAttribute="bottom" id="Jbt-tY-9Nk"/>
                         <constraint firstItem="bhq-rD-KhZ" firstAttribute="trailing" secondItem="LMV-2X-5wG" secondAttribute="trailing" id="MHW-dv-E3u"/>
                         <constraint firstAttribute="trailing" secondItem="LMV-2X-5wG" secondAttribute="trailing" constant="20" id="ODd-Tb-voQ"/>
+                        <constraint firstItem="akG-oy-JTS" firstAttribute="top" secondItem="eGw-3h-EGO" secondAttribute="top" id="bWS-Bb-XAT"/>
                         <constraint firstItem="LMV-2X-5wG" firstAttribute="leading" secondItem="w3q-Wx-Yif" secondAttribute="leading" id="cZx-IS-3TS"/>
                         <constraint firstItem="idR-MN-yBn" firstAttribute="leading" secondItem="w3q-Wx-Yif" secondAttribute="leading" id="eeT-zi-HT1"/>
                         <constraint firstItem="ip4-1D-3Gm" firstAttribute="trailing" secondItem="LMV-2X-5wG" secondAttribute="trailing" id="gfX-t3-B0w"/>
@@ -88,6 +96,7 @@
                         <constraint firstItem="idR-MN-yBn" firstAttribute="top" secondItem="bhq-rD-KhZ" secondAttribute="bottom" constant="10" id="uEn-40-roU"/>
                         <constraint firstItem="dH6-L8-4ZJ" firstAttribute="leading" secondItem="LMV-2X-5wG" secondAttribute="leading" id="xOw-ec-J7x"/>
                         <constraint firstItem="LMV-2X-5wG" firstAttribute="top" secondItem="w3q-Wx-Yif" secondAttribute="bottom" constant="10" id="ygu-ac-RBj"/>
+                        <constraint firstItem="akG-oy-JTS" firstAttribute="leading" secondItem="eGw-3h-EGO" secondAttribute="leading" id="zz2-bR-ZWJ"/>
                     </constraints>
                 </view>
             </subviews>
@@ -95,6 +104,7 @@
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
                 <constraint firstAttribute="trailing" secondItem="eGw-3h-EGO" secondAttribute="trailing" constant="5" id="IPJ-5q-e6Y"/>
+                <constraint firstItem="eGw-3h-EGO" firstAttribute="bottom" secondItem="akG-oy-JTS" secondAttribute="bottom" id="gdg-J3-Qb8"/>
                 <constraint firstItem="eGw-3h-EGO" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="5" id="llQ-ml-JZR"/>
                 <constraint firstItem="eGw-3h-EGO" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="pnq-oB-wMY"/>
                 <constraint firstAttribute="bottom" secondItem="eGw-3h-EGO" secondAttribute="bottom" constant="50" id="uoc-6d-KAw"/>
