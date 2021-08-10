@@ -10,4 +10,5 @@ import Foundation
 enum DashboardMode {
     case home
     case favorite
+    case search
 }

@@ -27,14 +27,10 @@
                             <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="8p6-SO-lK4">
                                 <rect key="frame" x="0.0" y="44" width="414" height="51"/>
                                 <textInputTraits key="textInputTraits"/>
-                            </searchBar>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CWF-u2-lEH">
-                                <rect key="frame" x="0.0" y="44" width="414" height="51"/>
-                                <state key="normal" title="Reset Button"/>
                                 <connections>
-                                    <action selector="resetButton:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="lwR-6s-vsR"/>
+                                    <outlet property="delegate" destination="Y6W-OH-hqX" id="HJF-iS-RsV"/>
                                 </connections>
-                            </button>
+                            </searchBar>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="H4M-Kt-h8p" userLabel="Bottom View">
                                 <rect key="frame" x="0.0" y="796" width="414" height="100"/>
                                 <subviews>
@@ -78,12 +74,9 @@
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemGray4Color"/>
                         <constraints>
-                            <constraint firstItem="CWF-u2-lEH" firstAttribute="trailing" secondItem="8p6-SO-lK4" secondAttribute="trailing" id="5Df-cL-bBy"/>
-                            <constraint firstItem="CWF-u2-lEH" firstAttribute="bottom" secondItem="8p6-SO-lK4" secondAttribute="bottom" id="6bo-D8-LJz"/>
                             <constraint firstItem="Hi7-WV-Imm" firstAttribute="top" secondItem="8p6-SO-lK4" secondAttribute="bottom" id="BYn-JB-fDF"/>
                             <constraint firstAttribute="trailing" secondItem="H4M-Kt-h8p" secondAttribute="trailing" id="HWM-Y7-UKA"/>
                             <constraint firstAttribute="bottom" secondItem="Hi7-WV-Imm" secondAttribute="bottom" id="LOv-Xa-C7E"/>
-                            <constraint firstItem="CWF-u2-lEH" firstAttribute="top" secondItem="8p6-SO-lK4" secondAttribute="top" id="OSO-WS-nbc"/>
                             <constraint firstAttribute="trailing" secondItem="Hi7-WV-Imm" secondAttribute="trailing" id="Pdv-iB-Abh"/>
                             <constraint firstAttribute="trailing" secondItem="8p6-SO-lK4" secondAttribute="trailing" id="TBa-mg-1Wj"/>
                             <constraint firstItem="8p6-SO-lK4" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="UsX-Cv-HGx"/>
@@ -91,7 +84,6 @@
                             <constraint firstItem="H4M-Kt-h8p" firstAttribute="leading" secondItem="5EZ-qb-Rvc" secondAttribute="leading" id="p94-ZM-ifj"/>
                             <constraint firstItem="Hi7-WV-Imm" firstAttribute="leading" secondItem="5EZ-qb-Rvc" secondAttribute="leading" id="qK5-na-qnK"/>
                             <constraint firstAttribute="bottom" secondItem="H4M-Kt-h8p" secondAttribute="bottom" id="rYi-mc-5p1"/>
-                            <constraint firstItem="CWF-u2-lEH" firstAttribute="leading" secondItem="8p6-SO-lK4" secondAttribute="leading" id="ya6-so-FD1"/>
                         </constraints>
                     </view>
                     <connections>
@@ -99,6 +91,7 @@
                         <outlet property="bottomViewHeightConstraint" destination="2FQ-QW-RKY" id="QaH-gO-Us3"/>
                         <outlet property="favoritesItemView" destination="qyM-gH-d4u" id="qtN-6A-qn2"/>
                         <outlet property="homeItemView" destination="t3w-Bp-LFj" id="RsE-gW-uW5"/>
+                        <outlet property="searchBar" destination="8p6-SO-lK4" id="qtj-PL-UMn"/>
                         <outlet property="tableView" destination="Hi7-WV-Imm" id="0Be-99-uTt"/>
                     </connections>
                 </viewController>

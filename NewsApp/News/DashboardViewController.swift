@@ -8,6 +8,7 @@
 import UIKit
 
 class DashboardViewController: UIViewController {
+    @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var bottomView: UIView!
     @IBOutlet weak var bottomViewHeightConstraint: NSLayoutConstraint!
@@ -16,16 +17,30 @@ class DashboardViewController: UIViewController {
 
     var newsModel: NewsModel?
     var favoritesModel: [ArticleModel] = []
-    var mode: DashboardMode = .home {
+    var searchModel: NewsModel?
+    var dashboardMode: DashboardMode = .home {
         didSet {
-            let range = NSMakeRange(0, self.tableView.numberOfSections)
-            let sections = NSIndexSet(indexesIn: range)
-            self.tableView.reloadSections(sections as IndexSet, with: .automatic)
+            DispatchQueue.main.async {
+                let range = NSMakeRange(0, self.tableView.numberOfSections)
+                let sections = NSIndexSet(indexesIn: range)
+                self.tableView.reloadSections(sections as IndexSet, with: .automatic)
+            }
         }
     }
+    var latestMode: DashboardMode = .home
     var loadLocalResponse = false
+    var searchText = "" {
+        didSet {
+            if searchText.isEmpty {
+                dashboardMode = latestMode
+            }
+        }
+    }
+    var network: Network?
 
     override func viewDidLoad() {
+        network = Network()
+        hideKeyboardWhenTappedAround()
         setupBottomView()
         registerCell()
         tableView.estimatedRowHeight = UIScreen.main.bounds.height
@@ -50,19 +65,13 @@ class DashboardViewController: UIViewController {
         homeItemView.setup(titleText: "Home", imageName: "home", isSelected: true) { [weak self] in
             guard let self = self else { return }
             self.favoritesItemView.unSelect()
-            self.mode = .home
+            self.dashboardMode = .home
         }
         favoritesItemView.setup(titleText: "Favorites", imageName: "favorite") { [weak self] in
             guard let self = self else { return }
             self.homeItemView.unSelect()
-            self.mode = .favorite
+            self.dashboardMode = .favorite
         }
-    }
-
-    @IBAction func resetButton(_ sender: UIButton) {
-        let domain = Bundle.main.bundleIdentifier!
-        UserDefaults.standard.removePersistentDomain(forName: domain)
-        UserDefaults.standard.synchronize()
     }
 
     func registerCell() {
@@ -73,7 +82,10 @@ class DashboardViewController: UIViewController {
     }
 
     func fetchAllData(categories: [String], completion: @escaping () -> Void) {
-        fetchNewsData(category: categories.first ?? "") { [weak self] result in
+        network?.fetchNews(
+            headers:["category": categories.first ?? ""],
+            parameters: ["country": UserDefaults.country]
+        ) { [weak self] result in
             guard let self = self else { return }
             switch result {
             case .success(let model):
@@ -95,32 +107,6 @@ class DashboardViewController: UIViewController {
         }
     }
 
-    func fetchNewsData(category: String, completion: @escaping (Result<NewsModel, Error>) -> Void) {
-        guard let urlComponents = NSURLComponents(string: RequestConstants.baseURL) else {
-            return
-        }
-        urlComponents.queryItems = [
-            URLQueryItem(name: "country", value: UserDefaults.country),
-            URLQueryItem(name: "category", value: category)
-        ]
-        guard let url = urlComponents.url else { return }
-        var request = URLRequest(url: url)
-        request.allHTTPHeaderFields = [
-            "X-Api-Key": RequestConstants.apiKey,
-            "Content-Type": "application/json"
-        ]
-
-        let task = URLSession.shared.dataTask(with: request) { data, response, error in
-            guard let data = data,
-                  let model = try? JSONDecoder().decode(NewsModel.self, from: data) else {
-                completion(.failure(error ?? NetworkError.defaultError))
-                return
-            }
-            completion(.success(model))
-        }
-        task.resume()
-    }
-
     func fetchLocalResponse() {
         if let path = Bundle.main.path(forResource: "LocalResponse", ofType: "json") {
             do {
@@ -135,8 +121,4 @@ class DashboardViewController: UIViewController {
             }
         }
     }
-}
-
-enum NetworkError: Error {
-    case defaultError
 }

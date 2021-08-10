@@ -34,6 +34,9 @@
 		D9C4CC5826C2F34200CC519F /* BottomItemView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D9C4CC5726C2F34200CC519F /* BottomItemView.xib */; };
 		D9FA5E7926C318D0007D92E4 /* DashboardMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9FA5E7826C318D0007D92E4 /* DashboardMode.swift */; };
 		D9FA5E7E26C323CE007D92E4 /* LocalResponse.json in Resources */ = {isa = PBXBuildFile; fileRef = D9FA5E7D26C323CE007D92E4 /* LocalResponse.json */; };
+		D9FA5E8026C32805007D92E4 /* DashboardViewController+SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9FA5E7F26C32805007D92E4 /* DashboardViewController+SearchBar.swift */; };
+		D9FA5E8226C32B77007D92E4 /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9FA5E8126C32B77007D92E4 /* Network.swift */; };
+		D9FA5E8426C32BCA007D92E4 /* UIViewController+hideKeyboardWhenTappedAround.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9FA5E8326C32BCA007D92E4 /* UIViewController+hideKeyboardWhenTappedAround.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -87,6 +90,9 @@
 		D9C4CC5726C2F34200CC519F /* BottomItemView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BottomItemView.xib; sourceTree = "<group>"; };
 		D9FA5E7826C318D0007D92E4 /* DashboardMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardMode.swift; sourceTree = "<group>"; };
 		D9FA5E7D26C323CE007D92E4 /* LocalResponse.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = LocalResponse.json; sourceTree = "<group>"; };
+		D9FA5E7F26C32805007D92E4 /* DashboardViewController+SearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DashboardViewController+SearchBar.swift"; sourceTree = "<group>"; };
+		D9FA5E8126C32B77007D92E4 /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
+		D9FA5E8326C32BCA007D92E4 /* UIViewController+hideKeyboardWhenTappedAround.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+hideKeyboardWhenTappedAround.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -191,6 +197,7 @@
 				D986AD9726C1B9A9002B85D2 /* ArticleCell */,
 				D986AD8B26C19501002B85D2 /* Dashboard.storyboard */,
 				D986AD8D26C1950E002B85D2 /* DashboardViewController.swift */,
+				D9FA5E7F26C32805007D92E4 /* DashboardViewController+SearchBar.swift */,
 				D986AD9C26C1BA0A002B85D2 /* DashboardViewController+TableView.swift */,
 			);
 			path = News;
@@ -208,6 +215,7 @@
 			isa = PBXGroup;
 			children = (
 				D986AD9326C19B33002B85D2 /* RequestConstants.swift */,
+				D9FA5E8126C32B77007D92E4 /* Network.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -226,6 +234,7 @@
 			isa = PBXGroup;
 			children = (
 				D986ADAF26C1EC38002B85D2 /* UserDefaults+Preferences.swift */,
+				D9FA5E8326C32BCA007D92E4 /* UIViewController+hideKeyboardWhenTappedAround.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -402,10 +411,13 @@
 				D9C4CC5626C2F33B00CC519F /* BottomItemView.swift in Sources */,
 				D986AD9B26C1B9C5002B85D2 /* ArticleCell.swift in Sources */,
 				D986ADAA26C1E7D9002B85D2 /* MainViewController.swift in Sources */,
+				D9FA5E8026C32805007D92E4 /* DashboardViewController+SearchBar.swift in Sources */,
 				D986AD9126C19680002B85D2 /* NewsModel.swift in Sources */,
 				D9C4CC5326C2B97100CC519F /* ArticleCellDelegate.swift in Sources */,
 				D986ADB826C1F9AE002B85D2 /* CategoryViewDelegate.swift in Sources */,
+				D9FA5E8426C32BCA007D92E4 /* UIViewController+hideKeyboardWhenTappedAround.swift in Sources */,
 				D986AD9426C19B33002B85D2 /* RequestConstants.swift in Sources */,
+				D9FA5E8226C32B77007D92E4 /* Network.swift in Sources */,
 				D986ADBA26C1FB58002B85D2 /* OnboardingViewController+CountryTextField.swift in Sources */,
 				D986ADB426C1F747002B85D2 /* CategoryView.swift in Sources */,
 				D9FA5E7926C318D0007D92E4 /* DashboardMode.swift in Sources */,
