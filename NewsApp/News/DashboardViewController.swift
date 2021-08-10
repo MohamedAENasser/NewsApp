@@ -16,20 +16,22 @@ class DashboardViewController: UIViewController {
     @IBOutlet weak var favoritesItemView: BottomItemView!
 
     var newsModel: NewsModel?
-    var favoritesModel: [ArticleModel] = []
+    var favoritesModel: [ArticleModel] = [] {
+        didSet {
+            if dashboardMode == .favorite {
+                reloadTableView()
+            }
+        }
+    }
     var searchModel: NewsModel?
     var dashboardMode: DashboardMode = .home {
         didSet {
             if oldValue == dashboardMode { return }
-            DispatchQueue.main.async {
-                let range = NSMakeRange(0, self.tableView.numberOfSections)
-                let sections = NSIndexSet(indexesIn: range)
-                self.tableView.reloadSections(sections as IndexSet, with: .automatic)
-            }
+            reloadTableView()
         }
     }
     var latestMode: DashboardMode = .home
-    var loadLocalResponse = false
+    var loadLocalResponse = true
     var searchText = "" {
         didSet {
             if searchText.isEmpty {
@@ -80,6 +82,14 @@ class DashboardViewController: UIViewController {
                                 bundle: .main)
         tableView.register(articleCell,
                            forCellReuseIdentifier: UIConstants.articleCellID)
+    }
+
+    func reloadTableView() {
+        DispatchQueue.main.async {
+            let range = NSMakeRange(0, self.tableView.numberOfSections)
+            let sections = NSIndexSet(indexesIn: range)
+            self.tableView.reloadSections(sections as IndexSet, with: .automatic)
+        }
     }
 
     func fetchAllData(categories: [String], completion: @escaping () -> Void) {
