@@ -33,6 +33,7 @@
 		D9C4CC5626C2F33B00CC519F /* BottomItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9C4CC5526C2F33B00CC519F /* BottomItemView.swift */; };
 		D9C4CC5826C2F34200CC519F /* BottomItemView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D9C4CC5726C2F34200CC519F /* BottomItemView.xib */; };
 		D9FA5E7926C318D0007D92E4 /* DashboardMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9FA5E7826C318D0007D92E4 /* DashboardMode.swift */; };
+		D9FA5E7E26C323CE007D92E4 /* LocalResponse.json in Resources */ = {isa = PBXBuildFile; fileRef = D9FA5E7D26C323CE007D92E4 /* LocalResponse.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -85,6 +86,7 @@
 		D9C4CC5526C2F33B00CC519F /* BottomItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomItemView.swift; sourceTree = "<group>"; };
 		D9C4CC5726C2F34200CC519F /* BottomItemView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BottomItemView.xib; sourceTree = "<group>"; };
 		D9FA5E7826C318D0007D92E4 /* DashboardMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardMode.swift; sourceTree = "<group>"; };
+		D9FA5E7D26C323CE007D92E4 /* LocalResponse.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = LocalResponse.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -143,6 +145,7 @@
 				D986ADA926C1E7D9002B85D2 /* MainViewController.swift */,
 				D986ADA726C1E7C1002B85D2 /* Main.storyboard */,
 				D986AD5B26C15C50002B85D2 /* SceneDelegate.swift */,
+				D9FA5E7D26C323CE007D92E4 /* LocalResponse.json */,
 				D986AD6226C15C51002B85D2 /* Assets.xcassets */,
 				D986AD6426C15C51002B85D2 /* LaunchScreen.storyboard */,
 				D986AD6726C15C51002B85D2 /* Info.plist */,
@@ -361,6 +364,7 @@
 				D986AD6326C15C51002B85D2 /* Assets.xcassets in Resources */,
 				D9C4CC5826C2F34200CC519F /* BottomItemView.xib in Resources */,
 				D986ADB626C1F74C002B85D2 /* CategoryView.xib in Resources */,
+				D9FA5E7E26C323CE007D92E4 /* LocalResponse.json in Resources */,
 				D986AD8C26C19501002B85D2 /* Dashboard.storyboard in Resources */,
 				D986ADA826C1E7C1002B85D2 /* Main.storyboard in Resources */,
 				D986AD9926C1B9BF002B85D2 /* ArticleCell.xib in Resources */,

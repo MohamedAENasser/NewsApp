@@ -23,12 +23,17 @@ class DashboardViewController: UIViewController {
             self.tableView.reloadSections(sections as IndexSet, with: .automatic)
         }
     }
+    var loadLocalResponse = false
 
     override func viewDidLoad() {
         setupBottomView()
         registerCell()
         tableView.estimatedRowHeight = UIScreen.main.bounds.height
         tableView.rowHeight = UITableView.automaticDimension
+        if loadLocalResponse {
+            fetchLocalResponse()
+            return
+        }
         fetchAllData(categories: UserDefaults.favoriteCategories) {
             DispatchQueue.main.async {
                 self.tableView.reloadData()
@@ -114,6 +119,21 @@ class DashboardViewController: UIViewController {
             completion(.success(model))
         }
         task.resume()
+    }
+
+    func fetchLocalResponse() {
+        if let path = Bundle.main.path(forResource: "LocalResponse", ofType: "json") {
+            do {
+                let data = try Data(contentsOf: URL(fileURLWithPath: path), options: .mappedIfSafe)
+                let model = try? JSONDecoder().decode(NewsModel.self, from: data)
+                self.newsModel = model
+                DispatchQueue.main.async {
+                    self.tableView.reloadData()
+                }
+            } catch {
+                print(error.localizedDescription)
+            }
+        }
     }
 }
 
