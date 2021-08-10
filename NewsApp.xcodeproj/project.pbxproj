@@ -25,6 +25,10 @@
 		D986ADA826C1E7C1002B85D2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D986ADA726C1E7C1002B85D2 /* Main.storyboard */; };
 		D986ADAA26C1E7D9002B85D2 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D986ADA926C1E7D9002B85D2 /* MainViewController.swift */; };
 		D986ADB026C1EC38002B85D2 /* UserDefaults+Preferences.swift in Sources */ = {isa = PBXBuildFile; fileRef = D986ADAF26C1EC38002B85D2 /* UserDefaults+Preferences.swift */; };
+		D986ADB426C1F747002B85D2 /* CategoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D986ADB326C1F747002B85D2 /* CategoryView.swift */; };
+		D986ADB626C1F74C002B85D2 /* CategoryView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D986ADB526C1F74C002B85D2 /* CategoryView.xib */; };
+		D986ADB826C1F9AE002B85D2 /* CategoryViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D986ADB726C1F9AE002B85D2 /* CategoryViewDelegate.swift */; };
+		D986ADBA26C1FB58002B85D2 /* OnboardingViewController+CountryTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = D986ADB926C1FB58002B85D2 /* OnboardingViewController+CountryTextField.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,6 +73,10 @@
 		D986ADA726C1E7C1002B85D2 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		D986ADA926C1E7D9002B85D2 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		D986ADAF26C1EC38002B85D2 /* UserDefaults+Preferences.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDefaults+Preferences.swift"; sourceTree = "<group>"; };
+		D986ADB326C1F747002B85D2 /* CategoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryView.swift; sourceTree = "<group>"; };
+		D986ADB526C1F74C002B85D2 /* CategoryView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CategoryView.xib; sourceTree = "<group>"; };
+		D986ADB726C1F9AE002B85D2 /* CategoryViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryViewDelegate.swift; sourceTree = "<group>"; };
+		D986ADB926C1FB58002B85D2 /* OnboardingViewController+CountryTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OnboardingViewController+CountryTextField.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,6 +127,7 @@
 		D986AD5826C15C50002B85D2 /* NewsApp */ = {
 			isa = PBXGroup;
 			children = (
+				D986ADB126C1F47E002B85D2 /* Loading */,
 				D986ADAE26C1EC22002B85D2 /* Extensions */,
 				D986AD8A26C194E6002B85D2 /* News */,
 				D986AD8926C172ED002B85D2 /* Onboarding */,
@@ -154,8 +163,10 @@
 		D986AD8926C172ED002B85D2 /* Onboarding */ = {
 			isa = PBXGroup;
 			children = (
+				D986ADB226C1F73A002B85D2 /* Categroy */,
 				D986AD5F26C15C50002B85D2 /* Onboarding.storyboard */,
 				D986AD5D26C15C50002B85D2 /* OnboardingViewController.swift */,
+				D986ADB926C1FB58002B85D2 /* OnboardingViewController+CountryTextField.swift */,
 			);
 			path = Onboarding;
 			sourceTree = "<group>";
@@ -204,6 +215,23 @@
 				D986ADAF26C1EC38002B85D2 /* UserDefaults+Preferences.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		D986ADB126C1F47E002B85D2 /* Loading */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Loading;
+			sourceTree = "<group>";
+		};
+		D986ADB226C1F73A002B85D2 /* Categroy */ = {
+			isa = PBXGroup;
+			children = (
+				D986ADB326C1F747002B85D2 /* CategoryView.swift */,
+				D986ADB526C1F74C002B85D2 /* CategoryView.xib */,
+				D986ADB726C1F9AE002B85D2 /* CategoryViewDelegate.swift */,
+			);
+			path = Categroy;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -311,6 +339,7 @@
 			files = (
 				D986AD6626C15C51002B85D2 /* LaunchScreen.storyboard in Resources */,
 				D986AD6326C15C51002B85D2 /* Assets.xcassets in Resources */,
+				D986ADB626C1F74C002B85D2 /* CategoryView.xib in Resources */,
 				D986AD8C26C19501002B85D2 /* News.storyboard in Resources */,
 				D986ADA826C1E7C1002B85D2 /* Main.storyboard in Resources */,
 				D986AD9926C1B9BF002B85D2 /* ArticleCell.xib in Resources */,
@@ -348,7 +377,10 @@
 				D986AD9B26C1B9C5002B85D2 /* ArticleCell.swift in Sources */,
 				D986ADAA26C1E7D9002B85D2 /* MainViewController.swift in Sources */,
 				D986AD9126C19680002B85D2 /* NewsModel.swift in Sources */,
+				D986ADB826C1F9AE002B85D2 /* CategoryViewDelegate.swift in Sources */,
 				D986AD9426C19B33002B85D2 /* RequestConstants.swift in Sources */,
+				D986ADBA26C1FB58002B85D2 /* OnboardingViewController+CountryTextField.swift in Sources */,
+				D986ADB426C1F747002B85D2 /* CategoryView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" ambiguous="YES" id="iN0-l3-epB" customClass="CategoryView" customModule="NewsApp" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="766" height="100"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aKe-hr-Xe6" userLabel="Container View">
+                    <rect key="frame" x="0.0" y="0.0" width="766" height="20"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dUJ-gX-ir4">
+                            <rect key="frame" x="20" y="-0.5" width="42" height="21"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="tick" translatesAutoresizingMaskIntoConstraints="NO" id="wLo-4T-sBT">
+                            <rect key="frame" x="736" y="5" width="10" height="10"/>
+                            <constraints>
+                                <constraint firstAttribute="width" secondItem="wLo-4T-sBT" secondAttribute="height" multiplier="1:1" id="rjV-Pf-1DB"/>
+                            </constraints>
+                        </imageView>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fyN-16-EZc">
+                            <rect key="frame" x="0.0" y="0.0" width="766" height="20"/>
+                            <connections>
+                                <action selector="viewDidPress:" destination="iN0-l3-epB" eventType="touchUpInside" id="Adz-Zd-3nF"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <constraints>
+                        <constraint firstAttribute="bottom" secondItem="fyN-16-EZc" secondAttribute="bottom" id="3Om-FL-VFv"/>
+                        <constraint firstItem="dUJ-gX-ir4" firstAttribute="centerY" secondItem="aKe-hr-Xe6" secondAttribute="centerY" id="8pF-CX-6yc"/>
+                        <constraint firstAttribute="height" constant="20" id="EKm-VU-JMx"/>
+                        <constraint firstAttribute="trailing" secondItem="wLo-4T-sBT" secondAttribute="trailing" constant="20" id="Fw5-gc-nkc"/>
+                        <constraint firstItem="fyN-16-EZc" firstAttribute="leading" secondItem="aKe-hr-Xe6" secondAttribute="leading" id="GVi-oD-Fs3"/>
+                        <constraint firstItem="wLo-4T-sBT" firstAttribute="height" secondItem="aKe-hr-Xe6" secondAttribute="height" multiplier="0.5" id="Rob-aO-uIV"/>
+                        <constraint firstItem="wLo-4T-sBT" firstAttribute="centerY" secondItem="aKe-hr-Xe6" secondAttribute="centerY" id="X7c-qR-c0D"/>
+                        <constraint firstItem="dUJ-gX-ir4" firstAttribute="leading" secondItem="aKe-hr-Xe6" secondAttribute="leading" constant="20" id="ZvM-1H-s23"/>
+                        <constraint firstItem="fyN-16-EZc" firstAttribute="top" secondItem="aKe-hr-Xe6" secondAttribute="top" id="bST-R3-JaQ"/>
+                        <constraint firstAttribute="trailing" secondItem="fyN-16-EZc" secondAttribute="trailing" id="dcR-F9-dhV"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="aKe-hr-Xe6" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="G7c-iW-I71"/>
+                <constraint firstItem="aKe-hr-Xe6" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="LtS-1f-Qi9"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="aKe-hr-Xe6" secondAttribute="trailing" id="aTX-gg-srl"/>
+                <constraint firstAttribute="bottom" secondItem="aKe-hr-Xe6" secondAttribute="bottom" id="pOk-GG-il3"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="categoryNameLabel" destination="dUJ-gX-ir4" id="C9k-19-2fu"/>
+                <outlet property="isSelectedImageView" destination="wLo-4T-sBT" id="CTI-Gt-7jz"/>
+            </connections>
+            <point key="canvasLocation" x="-173.91304347826087" y="-214.95535714285714"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="tick" width="492" height="492"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

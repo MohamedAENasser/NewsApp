@@ -15,16 +15,9 @@ class NewsViewController: UIViewController {
         registerCell()
         tableView.estimatedRowHeight = UIScreen.main.bounds.height
         tableView.rowHeight = UITableView.automaticDimension
-        fetchNewsData { [weak self] result in
-            switch result {
-            case .success(let model):
-                guard let self = self else { return }
-                self.newsModel = model
-                DispatchQueue.main.async {
-                    self.tableView.reloadData()
-                }
-            case .failure(let error):
-                print(error.localizedDescription)
+        fetchAllData(categories: UserDefaults.favoriteCategories) {
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
             }
         }
     }
@@ -36,12 +29,36 @@ class NewsViewController: UIViewController {
                            forCellReuseIdentifier: UIConstants.articleCellID)
     }
 
-    func fetchNewsData(completion: @escaping (Result<NewsModel, Error>) -> Void) {
+    func fetchAllData(categories: [String], completion: @escaping () -> Void) {
+        fetchNewsData(category: categories.first ?? "") { [weak self] result in
+            guard let self = self else { return }
+            switch result {
+            case .success(let model):
+                if self.newsModel == nil {
+                    self.newsModel = model
+                } else {
+                    self.newsModel?.articles += model.articles
+                }
+            case .failure(let error):
+                print(error.localizedDescription)
+            }
+            if categories.isEmpty {
+                completion()
+            } else {
+                var remainingCategories = categories
+                remainingCategories.removeFirst()
+                self.fetchAllData(categories: remainingCategories, completion: completion)
+            }
+        }
+    }
+
+    func fetchNewsData(category: String, completion: @escaping (Result<NewsModel, Error>) -> Void) {
         guard let urlComponents = NSURLComponents(string: RequestConstants.baseURL) else {
             return
         }
         urlComponents.queryItems = [
-            URLQueryItem(name: "country", value: UserDefaults.country)
+            URLQueryItem(name: "country", value: UserDefaults.country),
+            URLQueryItem(name: "category", value: category)
         ]
         guard let url = urlComponents.url else { return }
         var request = URLRequest(url: url)

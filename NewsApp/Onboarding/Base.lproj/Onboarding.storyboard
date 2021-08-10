@@ -16,11 +16,17 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please select your country" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D2E-zq-Tk0">
+                                <rect key="frame" x="72.5" y="101" width="269" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tHL-ZY-c8I">
-                                <rect key="frame" x="76.5" y="142" width="261.5" height="30"/>
+                                <rect key="frame" x="72.5" y="141.5" width="269" height="30"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0DV-vq-apq" userLabel="Countries Text Field">
-                                        <rect key="frame" x="0.0" y="0.0" width="261.5" height="30"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="269" height="30"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
@@ -34,14 +40,20 @@
                                     <constraint firstAttribute="bottom" secondItem="0DV-vq-apq" secondAttribute="bottom" id="ZgT-CU-DIZ"/>
                                 </constraints>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please select your country" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D2E-zq-Tk0">
-                                <rect key="frame" x="76.5" y="101" width="201.5" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please Select 3 Categories" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tBm-O6-sJD">
+                                <rect key="frame" x="105" y="191.5" width="204" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZLD-BS-pAc">
-                                <rect key="frame" x="190" y="438" width="34" height="30"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="mjG-MC-3Xn">
+                                <rect key="frame" x="0.0" y="232" width="414" height="570"/>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZLD-BS-pAc" userLabel="Start Button">
+                                <rect key="frame" x="190" y="822" width="34" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="Nx6-VK-wfJ"/>
+                                </constraints>
                                 <state key="normal" title="Start"/>
                                 <connections>
                                     <action selector="startButtonDidPress:" destination="BYZ-38-t0r" eventType="touchUpInside" id="wfh-Bt-pbx"/>
@@ -51,16 +63,23 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="tHL-ZY-c8I" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.631643" id="9Lv-aJ-Vt2"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="ZLD-BS-pAc" secondAttribute="bottom" id="1R7-uC-Jbz"/>
+                            <constraint firstItem="tHL-ZY-c8I" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.65" id="9Lv-aJ-Vt2"/>
+                            <constraint firstItem="tBm-O6-sJD" firstAttribute="top" secondItem="tHL-ZY-c8I" secondAttribute="bottom" constant="20" id="CGB-ip-A8x"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="mjG-MC-3Xn" secondAttribute="trailing" id="D2O-Bt-hAC"/>
                             <constraint firstItem="tHL-ZY-c8I" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="F7k-rJ-Ylx"/>
-                            <constraint firstItem="tHL-ZY-c8I" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="98" id="KQ2-fj-9gD"/>
-                            <constraint firstItem="ZLD-BS-pAc" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="e2M-ga-v0P"/>
+                            <constraint firstItem="mjG-MC-3Xn" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Gpv-G6-U0E"/>
+                            <constraint firstItem="tBm-O6-sJD" firstAttribute="centerX" secondItem="tHL-ZY-c8I" secondAttribute="centerX" id="IUA-YK-fef"/>
+                            <constraint firstItem="D2E-zq-Tk0" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="57" id="SXR-nX-SGA"/>
                             <constraint firstItem="tHL-ZY-c8I" firstAttribute="top" secondItem="D2E-zq-Tk0" secondAttribute="bottom" constant="20" id="fys-hr-qcB"/>
                             <constraint firstItem="D2E-zq-Tk0" firstAttribute="leading" secondItem="tHL-ZY-c8I" secondAttribute="leading" id="jmI-0T-Md1"/>
+                            <constraint firstItem="mjG-MC-3Xn" firstAttribute="top" secondItem="tBm-O6-sJD" secondAttribute="bottom" constant="20" id="lQf-Dr-eo7"/>
+                            <constraint firstItem="D2E-zq-Tk0" firstAttribute="centerX" secondItem="tHL-ZY-c8I" secondAttribute="centerX" id="pct-PM-OPQ"/>
                             <constraint firstItem="ZLD-BS-pAc" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="yZ9-Uz-Xs8"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="categoriesStackView" destination="mjG-MC-3Xn" id="Wlr-C0-L7S"/>
                         <outlet property="countriesTextField" destination="0DV-vq-apq" id="bcX-Eq-xnz"/>
                     </connections>
                 </viewController>
