@@ -20,6 +20,7 @@ class DashboardViewController: UIViewController {
     var searchModel: NewsModel?
     var dashboardMode: DashboardMode = .home {
         didSet {
+            if oldValue == dashboardMode { return }
             DispatchQueue.main.async {
                 let range = NSMakeRange(0, self.tableView.numberOfSections)
                 let sections = NSIndexSet(indexesIn: range)
