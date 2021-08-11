@@ -14,7 +14,7 @@
 		D986AD6126C15C50002B85D2 /* Onboarding.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D986AD5F26C15C50002B85D2 /* Onboarding.storyboard */; };
 		D986AD6326C15C51002B85D2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D986AD6226C15C51002B85D2 /* Assets.xcassets */; };
 		D986AD6626C15C51002B85D2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D986AD6426C15C51002B85D2 /* LaunchScreen.storyboard */; };
-		D986AD7126C15C52002B85D2 /* NewsAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D986AD7026C15C52002B85D2 /* NewsAppTests.swift */; };
+		D986AD7126C15C52002B85D2 /* OnboardingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D986AD7026C15C52002B85D2 /* OnboardingTests.swift */; };
 		D986AD7C26C15C52002B85D2 /* NewsAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D986AD7B26C15C52002B85D2 /* NewsAppUITests.swift */; };
 		D986AD8C26C19501002B85D2 /* Dashboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D986AD8B26C19501002B85D2 /* Dashboard.storyboard */; };
 		D986AD8E26C1950E002B85D2 /* DashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D986AD8D26C1950E002B85D2 /* DashboardViewController.swift */; };
@@ -69,7 +69,7 @@
 		D986AD6526C15C51002B85D2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D986AD6726C15C51002B85D2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D986AD6C26C15C52002B85D2 /* NewsAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NewsAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		D986AD7026C15C52002B85D2 /* NewsAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsAppTests.swift; sourceTree = "<group>"; };
+		D986AD7026C15C52002B85D2 /* OnboardingTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingTests.swift; sourceTree = "<group>"; };
 		D986AD7226C15C52002B85D2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D986AD7726C15C52002B85D2 /* NewsAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NewsAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D986AD7B26C15C52002B85D2 /* NewsAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsAppUITests.swift; sourceTree = "<group>"; };
@@ -166,7 +166,7 @@
 		D986AD6F26C15C52002B85D2 /* NewsAppTests */ = {
 			isa = PBXGroup;
 			children = (
-				D986AD7026C15C52002B85D2 /* NewsAppTests.swift */,
+				D986AD7026C15C52002B85D2 /* OnboardingTests.swift */,
 				D986AD7226C15C52002B85D2 /* Info.plist */,
 			);
 			path = NewsAppTests;
@@ -436,7 +436,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D986AD7126C15C52002B85D2 /* NewsAppTests.swift in Sources */,
+				D986AD7126C15C52002B85D2 /* OnboardingTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -608,6 +608,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 4P66433BRV;
 				INFOPLIST_FILE = NewsApp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -629,6 +630,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 4P66433BRV;
 				INFOPLIST_FILE = NewsApp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
