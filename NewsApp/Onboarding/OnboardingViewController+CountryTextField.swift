@@ -10,7 +10,7 @@ import UIKit
 extension OnboardingViewController {
     func setupCountryTextField() {
         countriesTextField.delegate = self
-        availableCountriesCodes.forEach { code in
+        Configuration.availableCountriesCodes.forEach { code in
             if let name = Locale.current.localizedString(forRegionCode: code) {
                 countries[name] = code
             }
