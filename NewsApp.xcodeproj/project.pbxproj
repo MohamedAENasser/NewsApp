@@ -37,6 +37,7 @@
 		D9FA5E8026C32805007D92E4 /* DashboardViewController+SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9FA5E7F26C32805007D92E4 /* DashboardViewController+SearchBar.swift */; };
 		D9FA5E8226C32B77007D92E4 /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9FA5E8126C32B77007D92E4 /* Network.swift */; };
 		D9FA5E8426C32BCA007D92E4 /* UIViewController+hideKeyboardWhenTappedAround.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9FA5E8326C32BCA007D92E4 /* UIViewController+hideKeyboardWhenTappedAround.swift */; };
+		D9FA5E8626C34B76007D92E4 /* Date+DifferenceFormat.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9FA5E8526C34B76007D92E4 /* Date+DifferenceFormat.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -93,6 +94,7 @@
 		D9FA5E7F26C32805007D92E4 /* DashboardViewController+SearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DashboardViewController+SearchBar.swift"; sourceTree = "<group>"; };
 		D9FA5E8126C32B77007D92E4 /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
 		D9FA5E8326C32BCA007D92E4 /* UIViewController+hideKeyboardWhenTappedAround.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+hideKeyboardWhenTappedAround.swift"; sourceTree = "<group>"; };
+		D9FA5E8526C34B76007D92E4 /* Date+DifferenceFormat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+DifferenceFormat.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -235,6 +237,7 @@
 			children = (
 				D986ADAF26C1EC38002B85D2 /* UserDefaults+Preferences.swift */,
 				D9FA5E8326C32BCA007D92E4 /* UIViewController+hideKeyboardWhenTappedAround.swift */,
+				D9FA5E8526C34B76007D92E4 /* Date+DifferenceFormat.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -417,6 +420,7 @@
 				D986ADB826C1F9AE002B85D2 /* CategoryViewDelegate.swift in Sources */,
 				D9FA5E8426C32BCA007D92E4 /* UIViewController+hideKeyboardWhenTappedAround.swift in Sources */,
 				D986AD9426C19B33002B85D2 /* RequestConstants.swift in Sources */,
+				D9FA5E8626C34B76007D92E4 /* Date+DifferenceFormat.swift in Sources */,
 				D9FA5E8226C32B77007D92E4 /* Network.swift in Sources */,
 				D986ADBA26C1FB58002B85D2 /* OnboardingViewController+CountryTextField.swift in Sources */,
 				D986ADB426C1F747002B85D2 /* CategoryView.swift in Sources */,

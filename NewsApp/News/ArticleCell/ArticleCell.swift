@@ -33,13 +33,13 @@ class ArticleCell: UITableViewCell {
         self.model = model
         titleLabel.text = model.title
         descriptionLabel.text = model.description
-        dateLabel.text = model.publishedAt
         sourceLabel.text = "By: \(model.source.name)"
         setupImage(from: model.urlToImage ?? "")
         url = model.url ?? ""
         backgroundColor = .systemGray4
         self.isFavorite = isFavorite
         setupFavoritStatus(isFavorite: isFavorite)
+        setupDate()
         self.delegate = delegate
     }
 
@@ -62,6 +62,14 @@ class ArticleCell: UITableViewCell {
                 self.articleImageView.image = UIImage(data: data)
             }
         }.resume()
+    }
+
+    func setupDate() {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy'-'MM'-'dd'T'HH':'mm':'ssZZZ"
+        let date = dateFormatter.date(from: model?.publishedAt ?? "")
+        guard let date = date else { return }
+        dateLabel.text = Date().offset(from: date)
     }
 
     func setupFavoritStatus(isFavorite: Bool) {
