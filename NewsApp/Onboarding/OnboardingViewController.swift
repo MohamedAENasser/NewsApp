@@ -10,7 +10,8 @@ import UIKit
 class OnboardingViewController: UIViewController {
     @IBOutlet weak var countriesTextField: UITextField!
     @IBOutlet weak var categoriesStackView: UIStackView!
-    @IBOutlet weak var warningLabel: UILabel!
+    @IBOutlet weak var countryWarningLabel: UILabel!
+    @IBOutlet weak var categoriesWarningLabel: UILabel!
     @IBOutlet weak var startButton: UIButton!
 
     var pickerView: UIPickerView?
@@ -85,13 +86,13 @@ class OnboardingViewController: UIViewController {
     var selectedCategories: [String] = [] {
         didSet {
             UserDefaults.favoriteCategories = selectedCategories
-            warningLabel.isHidden = selectedCategories.count != 3
         }
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        hideKeyboardWhenTappedAround()
         startButton.layer.cornerRadius = startButton.frame.height / 2
         setupCountryTextField()
         setupCategories()
@@ -108,6 +109,13 @@ class OnboardingViewController: UIViewController {
     }
 
     @IBAction func startButtonDidPress(_ sender: UIButton) {
+        countryWarningLabel.isHidden =
+            !(countriesTextField.text?.isEmpty ?? true)
+        categoriesWarningLabel.isHidden =
+            selectedCategories.count == 3
+        if !countryWarningLabel.isHidden || !categoriesWarningLabel.isHidden {
+            return
+        }
         presentDashboardViewController()
         UserDefaults.shouldSkipOnboarding = true
     }
@@ -115,6 +123,7 @@ class OnboardingViewController: UIViewController {
 
 extension OnboardingViewController: CategoryViewDelegate {
     func categoryDidPress(name: String, isSelected: Bool) {
+        categoriesWarningLabel.isHidden = true
         if isSelected, !selectedCategories.contains(name) {
             selectedCategories.append(name)
         } else {

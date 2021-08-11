@@ -57,6 +57,7 @@ extension OnboardingViewController {
     }
 
     @objc func doneButtonTapped() {
+        countryWarningLabel.isHidden = true
         guard let selectedRow = pickerView?.selectedRow(inComponent: 0) else {
             cancelButtonTapped()
             return
