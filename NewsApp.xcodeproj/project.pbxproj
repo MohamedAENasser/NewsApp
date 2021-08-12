@@ -225,9 +225,9 @@
 				D986AD9726C1B9A9002B85D2 /* ArticleCell */,
 				D986AD8B26C19501002B85D2 /* Dashboard.storyboard */,
 				D986AD8D26C1950E002B85D2 /* DashboardViewController.swift */,
+				D986AD9C26C1BA0A002B85D2 /* DashboardViewController+TableView.swift */,
 				D96A4A0F26C5991C00B4DCB7 /* Dashboard+DataPersistence.swift */,
 				D9FA5E7F26C32805007D92E4 /* DashboardViewController+SearchBar.swift */,
-				D986AD9C26C1BA0A002B85D2 /* DashboardViewController+TableView.swift */,
 			);
 			path = Dashboard;
 			sourceTree = "<group>";

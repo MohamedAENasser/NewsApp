@@ -39,6 +39,7 @@ class DashboardViewController: UIViewController {
         }
     }
     var network: Network?
+    let imagesCache = NSCache<NSString, UIImage>()
 
     override func viewDidLoad() {
         network = Network()
@@ -98,7 +99,9 @@ class DashboardViewController: UIViewController {
                 if self.newsModel == nil {
                     self.newsModel = model
                 } else {
-                    self.newsModel?.articles += model.articles
+                    let newArr = Array(Set(self.newsModel?.articles ?? [] + model.articles)).sorted(by: { ($0.publishedAt ?? "") > ($1.publishedAt ?? "") })
+
+                    self.newsModel?.articles = newArr
                 }
             case .failure(_):
                 self.retrieveResponse(from: FilesNamesConstants.latestResponse) { [weak self] model in

@@ -42,8 +42,12 @@ extension DashboardViewController: UITableViewDataSource {
         }
         cell.setup(
             with: article,
+            cachedImage: imagesCache.object(forKey: NSString(string: article.url ?? "")),
             isFavorite: favoritesModel.contains(article),
-            delegate: self)
+            delegate: self) { [weak self] key, image in
+            guard let self = self else { return }
+            self.imagesCache.setObject(image, forKey: NSString(string: key))
+        }
         return cell
     }
 }

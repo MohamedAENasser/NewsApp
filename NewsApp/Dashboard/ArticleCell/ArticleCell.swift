@@ -29,12 +29,22 @@ class ArticleCell: UITableViewCell {
             for: .normal)
     }
 
-    func setup(with model: ArticleModel, isFavorite: Bool, delegate: ArticleCellDelegate?) {
+    func setup(
+        with model: ArticleModel,
+        cachedImage: UIImage?,
+        isFavorite: Bool,
+        delegate: ArticleCellDelegate?,
+        completion: @escaping (String, UIImage) -> Void
+    ) {
         self.model = model
         titleLabel.text = model.title
         descriptionLabel.text = model.description
         sourceLabel.text = "\("dashboard_source_prefix".localized): \(model.source.name)"
-        setupImage(from: model.urlToImage ?? "")
+        if let cachedImage = cachedImage {
+            articleImageView.image = cachedImage
+        } else {
+            setupImage(from: model.urlToImage ?? "", completion: completion)
+        }
         url = model.url ?? ""
         backgroundColor = .systemGray4
         self.isFavorite = isFavorite
@@ -43,7 +53,7 @@ class ArticleCell: UITableViewCell {
         self.delegate = delegate
     }
 
-    func setupImage(from imageURL: String) {
+    func setupImage(from imageURL: String, completion: @escaping (String, UIImage) -> Void) {
         guard let url = URL(string: imageURL) else {
             DispatchQueue.main.async {
                 self.articleImageView.image = UIImage(named: "imageNotFound")
@@ -59,7 +69,9 @@ class ArticleCell: UITableViewCell {
                 return
             }
             DispatchQueue.main.async {
-                self.articleImageView.image = UIImage(data: data)
+                guard let image = UIImage(data: data) else { return }
+                self.articleImageView.image = image
+                completion(self.model?.url ?? "", image)
             }
         }.resume()
     }
