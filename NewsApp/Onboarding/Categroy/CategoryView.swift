@@ -13,7 +13,7 @@ class CategoryView: UIView {
     weak var delegate: CategoryViewDelegate?
 
     func setup(name: String, delegate: CategoryViewDelegate?) {
-        categoryNameLabel.text = name
+        categoryNameLabel.text = name.localized
         self.delegate = delegate
         isSelectedImageView.image = isSelectedImageView.image?.withRenderingMode(.alwaysTemplate)
         isSelectedImageView.tintColor = .systemGray3

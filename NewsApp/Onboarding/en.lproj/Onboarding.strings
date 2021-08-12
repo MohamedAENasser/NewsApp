@@ -1,0 +1,18 @@
+
+/* Class = "UITextField"; placeholder = "Select preferred country"; ObjectID = "0DV-vq-apq"; */
+"0DV-vq-apq.placeholder" = "Select preferred country";
+
+/* Class = "UILabel"; text = "Please select your favorite country"; ObjectID = "2bT-9m-aSe"; */
+"2bT-9m-aSe.text" = "Please select your favorite country";
+
+/* Class = "UILabel"; text = "Please select your country"; ObjectID = "D2E-zq-Tk0"; */
+"D2E-zq-Tk0.text" = "Please select your country";
+
+/* Class = "UILabel"; text = "Please select 3 categories"; ObjectID = "OYM-AC-5qf"; */
+"OYM-AC-5qf.text" = "Please select 3 categories";
+
+/* Class = "UIButton"; normalTitle = "Start"; ObjectID = "ZLD-BS-pAc"; */
+"ZLD-BS-pAc.normalTitle" = "Start";
+
+/* Class = "UILabel"; text = "Please Select 3 Categories"; ObjectID = "tBm-O6-sJD"; */
+"tBm-O6-sJD.text" = "Please Select 3 Categories";

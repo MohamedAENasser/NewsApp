@@ -32,7 +32,7 @@ extension OnboardingViewController {
         toolBar.sizeToFit()
 
         let doneButton = UIBarButtonItem(
-            title: "Done",
+            title: "Done".localized,
             style: UIBarButtonItem.Style.done,
             target: self,
             action: #selector(doneButtonTapped)
@@ -43,7 +43,7 @@ extension OnboardingViewController {
             action: nil
         )
         let cancelButton = UIBarButtonItem(
-            title: "Cancel",
+            title: "Cancel".localized,
             style: UIBarButtonItem.Style.plain,
             target: self,
             action: #selector(cancelButtonTapped)

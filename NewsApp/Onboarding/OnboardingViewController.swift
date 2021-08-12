@@ -39,6 +39,7 @@ class OnboardingViewController: UIViewController {
                 return
             }
             categoryView.setup(name: category, delegate: self)
+            categoryView.heightAnchor.constraint(equalToConstant: 35).isActive = true
             categoriesStackView.addArrangedSubview(categoryView)
         }
     }
