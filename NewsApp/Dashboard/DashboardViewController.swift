@@ -65,12 +65,12 @@ class DashboardViewController: UIViewController {
             bottomViewHeightConstraint.constant += view.safeAreaInsets.bottom
         }
         bottomView.layer.cornerRadius = 10
-        homeItemView.setup(titleText: "Home", imageName: "home", isSelected: true) { [weak self] in
+        homeItemView.setup(titleText: "dashboard_home".localized, imageName: "home", isSelected: true) { [weak self] in
             guard let self = self else { return }
             self.favoritesItemView.unSelect()
             self.dashboardMode = .home
         }
-        favoritesItemView.setup(titleText: "Favorites", imageName: "favorite") { [weak self] in
+        favoritesItemView.setup(titleText: "dashboard_favorites".localized, imageName: "favorite") { [weak self] in
             guard let self = self else { return }
             self.homeItemView.unSelect()
             self.dashboardMode = .favorite

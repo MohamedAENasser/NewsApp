@@ -33,7 +33,7 @@ class ArticleCell: UITableViewCell {
         self.model = model
         titleLabel.text = model.title
         descriptionLabel.text = model.description
-        sourceLabel.text = "By: \(model.source.name)"
+        sourceLabel.text = "\("dashboard_source_prefix".localized): \(model.source.name)"
         setupImage(from: model.urlToImage ?? "")
         url = model.url ?? ""
         backgroundColor = .systemGray4

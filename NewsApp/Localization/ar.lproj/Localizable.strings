@@ -1,3 +1,4 @@
+// Onboarding
 "business" = "اعمال";
 "entertainment" = "ترفيه";
 "general" = "عام";
@@ -7,3 +8,57 @@
 "technology" = "تكنولوجيا";
 "Done" = "تم";
 "Cancel" = "الغاء";
+
+// Dashboard
+"dashboard_home" = "الرئيسية";
+"dashboard_favorites" = "المفضلة";
+"dashboard_source_prefix" = "بواسطة";
+"dashboard_date_prefix" = "منذ";
+
+// Numbers
+"1" = "١";
+"2" = "٢";
+"3" = "٣";
+"4" = "٤";
+"5" = "٥";
+"6" = "٦";
+"7" = "٧";
+"8" = "٨";
+"9" = "٩";
+"0" = "٠";
+
+// Dates
+"date_second_singular" = "ثانية";
+"date_second_double" = "ثانيتان";
+"date_second_less_than_10" = "ثوان";
+"date_second_plural" = "ثانية";
+
+"date_minute_singular" = "دقيقة";
+"date_minute_double" = "دقيقتان";
+"date_minute_less_than_10" = "دقائق";
+"date_minute_plural" = "دقيقة";
+
+"date_hour_singular" = "ساعة";
+"date_hour_double" = "ساعتان";
+"date_hour_less_than_10" = "ساعات";
+"date_hour_plural" = "ساعة";
+
+"date_day_singular" = "يوم";
+"date_day_double" = "يومان";
+"date_day_less_than_10" = "ايام";
+"date_day_plural" = "يوم";
+
+"date_week_singular" = "اسبوع";
+"date_week_double" = "اسبوعان";
+"date_week_less_than_10" = "اسابيع";
+"date_week_plural" = "اسبوع";
+
+"date_month_singular" = "شهر";
+"date_month_double" = "شهران";
+"date_month_less_than_10" = "أشهر";
+"date_month_plural" = "شهر";
+
+"date_year_singular" = "سنة";
+"date_year_double" = "سنتان";
+"date_year_less_than_10" = "سنين";
+"date_year_plural" = "سنة";

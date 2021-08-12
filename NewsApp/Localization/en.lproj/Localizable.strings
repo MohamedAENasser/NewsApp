@@ -1,3 +1,4 @@
+// Onboarding
 "business" = "business";
 "entertainment" = "entertainment";
 "general" = "general";
@@ -7,3 +8,58 @@
 "technology" = "technology";
 "Done" = "Done";
 "Cancel" = "Cancel";
+
+// Dashboard
+"dashboard_home" = "Home";
+"dashboard_favorites" = "Favorites";
+"dashboard_source_prefix" = "By";
+"dashboard_date_prefix" = "from";
+
+// Numbers
+"1" = "1";
+"2" = "2";
+"3" = "3";
+"4" = "4";
+"5" = "5";
+"6" = "6";
+"7" = "7";
+"8" = "8";
+"9" = "9";
+"0" = "0";
+
+// Dates
+"date_second_singular" = "1 second";
+"date_second_double" = "2 seconds";
+"date_second_less_than_10" = "seconds";
+"date_second_plural" = "seconds";
+
+"date_minute_singular" = "1 minute";
+"date_minute_double" = "2 minutes";
+"date_minute_less_than_10" = "minutes";
+"date_minute_plural" = "minutes";
+
+"date_hour_singular" = "1 hour";
+"date_hour_double" = "2 hours";
+"date_hour_less_than_10" = "hours";
+"date_hour_plural" = "hours";
+
+"date_day_singular" = "1 day";
+"date_day_double" = "2 days";
+"date_day_less_than_10" = "days";
+"date_day_plural" = "days";
+
+"date_week_singular" = "1 week";
+"date_week_double" = "2 weeks";
+"date_week_less_than_10" = "weeks";
+"date_week_plural" = "weeks";
+
+"date_month_singular" = "1 month";
+"date_month_double" = "2 months";
+"date_month_less_than_10" = "months";
+"date_month_plural" = "months";
+
+"date_year_singular" = "1 year";
+"date_year_double" = "2 years";
+"date_year_less_than_10" = "years";
+"date_year_plural" = "years";
+
