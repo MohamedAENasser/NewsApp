@@ -31,7 +31,6 @@ class DashboardViewController: UIViewController {
         }
     }
     var latestMode: DashboardMode = .home
-    var loadLocalResponse = false
     var searchText = "" {
         didSet {
             if searchText.isEmpty {
@@ -48,10 +47,6 @@ class DashboardViewController: UIViewController {
         registerCell()
         tableView.estimatedRowHeight = UIScreen.main.bounds.height
         tableView.rowHeight = UITableView.automaticDimension
-        if loadLocalResponse {
-            fetchLocalResponse()
-            return
-        }
         fetchAllData(categories: UserDefaults.favoriteCategories) {
             DispatchQueue.main.async {
                 self.tableView.reloadData()
@@ -105,30 +100,30 @@ class DashboardViewController: UIViewController {
                 } else {
                     self.newsModel?.articles += model.articles
                 }
-            case .failure(let error):
-                print(error.localizedDescription)
+            case .failure(_):
+                self.retrieveResponse(from: FilesNamesConstants.latestResponse) { [weak self] model in
+                    guard let self = self,
+                          let model = model else {
+                        return
+                    }
+                    self.newsModel = model
+                    DispatchQueue.main.async {
+                        self.tableView.reloadData()
+                    }
+                }
+                return
             }
             if categories.isEmpty {
+                if let newsModel = self.newsModel {
+                    DispatchQueue.global(qos: .background).async {
+                        self.saveResponse(model: newsModel)
+                    }
+                }
                 completion()
             } else {
                 var remainingCategories = categories
                 remainingCategories.removeFirst()
                 self.fetchAllData(categories: remainingCategories, completion: completion)
-            }
-        }
-    }
-
-    func fetchLocalResponse() {
-        if let path = Bundle.main.path(forResource: "LocalResponse", ofType: "json") {
-            do {
-                let data = try Data(contentsOf: URL(fileURLWithPath: path), options: .mappedIfSafe)
-                let model = try? JSONDecoder().decode(NewsModel.self, from: data)
-                self.newsModel = model
-                DispatchQueue.main.async {
-                    self.tableView.reloadData()
-                }
-            } catch {
-                print(error.localizedDescription)
             }
         }
     }

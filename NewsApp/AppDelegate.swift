@@ -13,7 +13,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        // Stop default URL cache and use customized one inside dashboard logic
+        URLCache.shared.diskCapacity = 0
+        URLCache.shared.memoryCapacity = 0
         return true
     }
 
