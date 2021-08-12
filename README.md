@@ -4,7 +4,11 @@ In this tutorial you will learn how to get full advantages of NewsApp step by st
 
 ## Get Started
 
-First open XCode project, then run the app.
+First go to: https://newsapi.org
+then create your own API Key.
+then open XCode project
+navigate to `RequestConstants` file then set `apiKey` variable to your own key.
+Now you are ready to run the app.
 
 ## Onboarding
 You should see the Onboarding screen, like the following:
