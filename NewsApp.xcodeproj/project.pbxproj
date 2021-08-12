@@ -14,6 +14,7 @@
 		D96A4A1226C5994700B4DCB7 /* String+SaveToFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = D96A4A1126C5994700B4DCB7 /* String+SaveToFile.swift */; };
 		D96A4A1426C5C68700B4DCB7 /* ArticleModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D96A4A1326C5C68700B4DCB7 /* ArticleModel.swift */; };
 		D96A4A1626C5C69B00B4DCB7 /* SourceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D96A4A1526C5C69B00B4DCB7 /* SourceModel.swift */; };
+		D96A4A1826C5E23100B4DCB7 /* UIColor+DarkMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = D96A4A1726C5E23100B4DCB7 /* UIColor+DarkMode.swift */; };
 		D986AD5A26C15C50002B85D2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D986AD5926C15C50002B85D2 /* AppDelegate.swift */; };
 		D986AD5C26C15C50002B85D2 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D986AD5B26C15C50002B85D2 /* SceneDelegate.swift */; };
 		D986AD5E26C15C50002B85D2 /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D986AD5D26C15C50002B85D2 /* OnboardingViewController.swift */; };
@@ -75,6 +76,7 @@
 		D96A4A1126C5994700B4DCB7 /* String+SaveToFile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+SaveToFile.swift"; sourceTree = "<group>"; };
 		D96A4A1326C5C68700B4DCB7 /* ArticleModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleModel.swift; sourceTree = "<group>"; };
 		D96A4A1526C5C69B00B4DCB7 /* SourceModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SourceModel.swift; sourceTree = "<group>"; };
+		D96A4A1726C5E23100B4DCB7 /* UIColor+DarkMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+DarkMode.swift"; sourceTree = "<group>"; };
 		D986AD5626C15C50002B85D2 /* NewsApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NewsApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D986AD5926C15C50002B85D2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D986AD5B26C15C50002B85D2 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -270,6 +272,7 @@
 				D9FA5E8326C32BCA007D92E4 /* UIViewController+hideKeyboardWhenTappedAround.swift */,
 				D9FA5E8526C34B76007D92E4 /* Date+DifferenceFormat.swift */,
 				D96A4A1126C5994700B4DCB7 /* String+SaveToFile.swift */,
+				D96A4A1726C5E23100B4DCB7 /* UIColor+DarkMode.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -444,6 +447,7 @@
 				D986AD5C26C15C50002B85D2 /* SceneDelegate.swift in Sources */,
 				D986ADB026C1EC38002B85D2 /* UserDefaults+Preferences.swift in Sources */,
 				D986AD9D26C1BA0A002B85D2 /* DashboardViewController+TableView.swift in Sources */,
+				D96A4A1826C5E23100B4DCB7 /* UIColor+DarkMode.swift in Sources */,
 				D986AD8E26C1950E002B85D2 /* DashboardViewController.swift in Sources */,
 				D96A4A1426C5C68700B4DCB7 /* ArticleModel.swift in Sources */,
 				D96A4A1226C5994700B4DCB7 /* String+SaveToFile.swift in Sources */,

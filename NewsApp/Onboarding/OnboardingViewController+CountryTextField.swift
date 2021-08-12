@@ -23,12 +23,12 @@ extension OnboardingViewController {
 
         pickerView.delegate = self
         pickerView.dataSource = self
-        pickerView.backgroundColor = .white
+        pickerView.backgroundColor = .textFieldInputViewColor
 
         // ToolBar initialization
         toolBar.barStyle = .default
         toolBar.isTranslucent = true
-        toolBar.tintColor = .gray
+        toolBar.tintColor = .textFieldTopViewColor
         toolBar.sizeToFit()
 
         let doneButton = UIBarButtonItem(

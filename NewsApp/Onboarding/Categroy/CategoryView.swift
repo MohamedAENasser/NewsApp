@@ -16,16 +16,16 @@ class CategoryView: UIView {
         categoryNameLabel.text = name.localized
         self.delegate = delegate
         isSelectedImageView.image = isSelectedImageView.image?.withRenderingMode(.alwaysTemplate)
-        isSelectedImageView.tintColor = .systemGray3
+        isSelectedImageView.tintColor = .checkBoxUnSelectedColor
     }
 
     @IBAction func viewDidPress(_ sender: UIButton) {
-        let isSelected =  isSelectedImageView.tintColor == .green
+        let isSelected =  isSelectedImageView.tintColor == .checkBoxSelectedColor
         if !(delegate?.isUpdateAllowed(isSelected: isSelected) ?? false) { return }
         if isSelected {
-            isSelectedImageView.tintColor = .systemGray3
+            isSelectedImageView.tintColor = .checkBoxUnSelectedColor
         } else {
-            isSelectedImageView.tintColor = .green
+            isSelectedImageView.tintColor = .checkBoxSelectedColor
         }
         delegate?.categoryDidPress(
             name: categoryNameLabel.text ?? "",

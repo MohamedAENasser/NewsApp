@@ -4,6 +4,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -26,7 +27,7 @@
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please select your country" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D2E-zq-Tk0">
                                                 <rect key="frame" x="83" y="60" width="248.5" height="24"/>
                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
-                                                <nil key="textColor"/>
+                                                <color key="textColor" name="MainTextColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qgl-3L-Qs5" userLabel="Country View Container">
@@ -34,6 +35,8 @@
                                                 <subviews>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Select preferred country" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0DV-vq-apq" userLabel="Countries Text Field">
                                                         <rect key="frame" x="0.0" y="0.0" width="207" height="30"/>
+                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <color key="textColor" name="MainTextColor"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits"/>
                                                     </textField>
@@ -44,7 +47,7 @@
                                                         </constraints>
                                                     </imageView>
                                                 </subviews>
-                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="30" id="E74-uu-NAF"/>
                                                     <constraint firstItem="0DV-vq-apq" firstAttribute="leading" secondItem="qgl-3L-Qs5" secondAttribute="leading" id="FHa-hm-sxB"/>
@@ -65,11 +68,12 @@
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please Select 3 Categories" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tBm-O6-sJD">
                                                 <rect key="frame" x="81.5" y="215" width="251" height="24"/>
                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
-                                                <nil key="textColor"/>
+                                                <color key="textColor" name="MainTextColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="mjG-MC-3Xn">
                                                 <rect key="frame" x="103.5" y="259" width="207" height="477"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </stackView>
                                             <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please select 3 categories" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OYM-AC-5qf" userLabel="Warning Label">
                                                 <rect key="frame" x="41.5" y="746" width="331" height="30"/>
@@ -82,19 +86,19 @@
                                             </label>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZLD-BS-pAc" userLabel="Start Button">
                                                 <rect key="frame" x="103.5" y="816" width="207" height="40"/>
-                                                <color key="backgroundColor" systemColor="systemGray2Color"/>
+                                                <color key="backgroundColor" name="ButtonColor"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="40" id="Nx6-VK-wfJ"/>
                                                 </constraints>
                                                 <state key="normal" title="Start">
-                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <color key="titleColor" name="MainTextColor"/>
                                                 </state>
                                                 <connections>
                                                     <action selector="startButtonDidPress:" destination="BYZ-38-t0r" eventType="touchUpInside" id="wfh-Bt-pbx"/>
                                                 </connections>
                                             </button>
                                         </subviews>
-                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <color key="backgroundColor" name="BackGroundColor"/>
                                         <constraints>
                                             <constraint firstItem="tBm-O6-sJD" firstAttribute="top" secondItem="2bT-9m-aSe" secondAttribute="bottom" constant="40" id="8mW-7J-2cY"/>
                                             <constraint firstItem="tBm-O6-sJD" firstAttribute="centerX" secondItem="D2E-zq-Tk0" secondAttribute="centerX" id="Ch8-CQ-LgV"/>
@@ -119,6 +123,7 @@
                                         </constraints>
                                     </view>
                                 </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstItem="m2S-rt-qb5" firstAttribute="width" secondItem="X2k-nj-wMk" secondAttribute="width" id="HfU-f5-ydC"/>
                                     <constraint firstItem="m2S-rt-qb5" firstAttribute="top" secondItem="X2k-nj-wMk" secondAttribute="top" id="N6O-eu-tWr"/>
@@ -129,7 +134,7 @@
                             </scrollView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" name="BackGroundColor"/>
                         <constraints>
                             <constraint firstItem="X2k-nj-wMk" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="1Kp-vG-tT4"/>
                             <constraint firstAttribute="trailing" secondItem="X2k-nj-wMk" secondAttribute="trailing" id="7kF-nT-4P9"/>
@@ -154,12 +159,15 @@
     </scenes>
     <resources>
         <image name="downArrow" width="625" height="362"/>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-        <systemColor name="systemGray2Color">
-            <color red="0.68235294117647061" green="0.68235294117647061" blue="0.69803921568627447" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
+        <namedColor name="BackGroundColor">
+            <color red="0.53333333333333333" green="0.72549019607843135" blue="0.84313725490196079" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="ButtonColor">
+            <color red="0.34934271406881012" green="0.47698789371430189" blue="0.55745188395182299" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="MainTextColor">
+            <color red="0.0685945851745145" green="0.098719032818815861" blue="0.12555545138329571" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <systemColor name="systemRedColor">
             <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
