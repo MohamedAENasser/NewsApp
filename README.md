@@ -24,6 +24,8 @@ After that you should select only 3 categories you prefer to get their related n
 
 Click on Start Button, if all went well you should be navigated successfully to the Dashboard.
 
+Note: Once you are navigated to the dashboard, the Onboarding screen will never be shown again.
+
 ## Dashboard
 In Dashboard you will see latest news headlines, something like this:
 ![](/DocumentationAssets/Dashboard.png)
