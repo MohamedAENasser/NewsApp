@@ -31,7 +31,7 @@ class DashboardViewController: UIViewController {
         }
     }
     var latestMode: DashboardMode = .home
-    var loadLocalResponse = true
+    var loadLocalResponse = false
     var searchText = "" {
         didSet {
             if searchText.isEmpty {
