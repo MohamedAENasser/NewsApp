@@ -30,7 +30,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qgl-3L-Qs5" userLabel="Country View Container">
-                                                <rect key="frame" x="103.5" y="84" width="207" height="30"/>
+                                                <rect key="frame" x="103.5" y="94" width="207" height="30"/>
                                                 <subviews>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Select preferred country" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0DV-vq-apq" userLabel="Countries Text Field">
                                                         <rect key="frame" x="0.0" y="0.0" width="207" height="30"/>
@@ -57,19 +57,19 @@
                                                 </constraints>
                                             </view>
                                             <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please select your favorite country" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2bT-9m-aSe">
-                                                <rect key="frame" x="41.5" y="144" width="331" height="21"/>
+                                                <rect key="frame" x="41.5" y="154" width="331" height="21"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <color key="textColor" systemColor="systemRedColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please Select 3 Categories" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tBm-O6-sJD">
-                                                <rect key="frame" x="81.5" y="205" width="251" height="24"/>
+                                                <rect key="frame" x="81.5" y="215" width="251" height="24"/>
                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="mjG-MC-3Xn">
-                                                <rect key="frame" x="103.5" y="249" width="207" height="487"/>
+                                                <rect key="frame" x="103.5" y="259" width="207" height="477"/>
                                             </stackView>
                                             <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please select 3 categories" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OYM-AC-5qf" userLabel="Warning Label">
                                                 <rect key="frame" x="41.5" y="746" width="331" height="30"/>
@@ -108,7 +108,7 @@
                                             <constraint firstItem="qgl-3L-Qs5" firstAttribute="centerX" secondItem="D2E-zq-Tk0" secondAttribute="centerX" id="cNI-0m-vb0"/>
                                             <constraint firstItem="mjG-MC-3Xn" firstAttribute="centerX" secondItem="D2E-zq-Tk0" secondAttribute="centerX" id="cba-UW-sgG"/>
                                             <constraint firstItem="2bT-9m-aSe" firstAttribute="top" secondItem="qgl-3L-Qs5" secondAttribute="bottom" constant="30" id="dOn-I9-P4P"/>
-                                            <constraint firstItem="qgl-3L-Qs5" firstAttribute="top" secondItem="D2E-zq-Tk0" secondAttribute="bottom" id="emJ-6X-r1q"/>
+                                            <constraint firstItem="qgl-3L-Qs5" firstAttribute="top" secondItem="D2E-zq-Tk0" secondAttribute="bottom" constant="10" id="emJ-6X-r1q"/>
                                             <constraint firstItem="OYM-AC-5qf" firstAttribute="centerX" secondItem="D2E-zq-Tk0" secondAttribute="centerX" id="hIV-HY-fFU"/>
                                             <constraint firstItem="ZLD-BS-pAc" firstAttribute="width" secondItem="m2S-rt-qb5" secondAttribute="width" multiplier="0.5" id="jGk-vs-nx0"/>
                                             <constraint firstItem="ZLD-BS-pAc" firstAttribute="centerX" secondItem="D2E-zq-Tk0" secondAttribute="centerX" id="mL0-UX-fbF"/>
