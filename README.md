@@ -4,10 +4,11 @@ In this tutorial you will learn how to get full advantages of NewsApp step by st
 
 ## Get Started
 
-First go to: https://newsapi.org
-then create your own API Key.
-then open XCode project
-navigate to `RequestConstants` file then set `apiKey` variable to your own key.
+- First go to: https://newsapi.org
+- then create your own API Key.
+- then open XCode project
+- navigate to `RequestConstants` file then set `apiKey` variable to your own key.
+
 Now you are ready to run the app.
 
 ## Onboarding
@@ -23,6 +24,9 @@ When you click on country text field, you will show a picker view contains all c
 After that you should select only 3 categories you prefer to get their related news.
 
 Click on Start Button, if all went well you should be navigated successfully to the Dashboard.
+
+if you missed any of these steps, you will see warning with missing step like the following:
+![](/DocumentationAssets/OnboardingWarnings.png)
 
 Note: Once you are navigated to the dashboard, the Onboarding screen will never be shown again.
 
