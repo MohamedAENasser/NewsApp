@@ -38,7 +38,7 @@ class ArticleCell: UITableViewCell {
     ) {
         self.model = model
         titleLabel.text = model.title
-        descriptionLabel.text = model.description
+        descriptionLabel.text = model.articleDescription
         sourceLabel.text = "\("dashboard_source_prefix".localized): \(model.source.name)"
         if let cachedImage = cachedImage {
             articleImageView.image = cachedImage

@@ -61,7 +61,9 @@ extension DashboardViewController: UITableViewDelegate {
 extension DashboardViewController: ArticleCellDelegate {
     func favoriteStatusDidChange(_ model: ArticleModel, _ newStatus: Bool) {
         if newStatus {
-            favoritesModel.append(model)
+            favoritesModel.insertWithCondition(model) {
+                ($0.publishedAt ?? "") > ($1.publishedAt ?? "")
+            }
         } else {
             favoritesModel = favoritesModel.filter { $0 != model }
         }
