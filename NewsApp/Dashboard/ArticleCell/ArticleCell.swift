@@ -46,7 +46,7 @@ class ArticleCell: UITableViewCell {
             setupImage(from: model.urlToImage ?? "", completion: completion)
         }
         url = model.url ?? ""
-        backgroundColor = .systemGray4
+        backgroundColor = .backgroundColor
         self.isFavorite = isFavorite
         setupFavoritStatus(isFavorite: isFavorite)
         setupDate()

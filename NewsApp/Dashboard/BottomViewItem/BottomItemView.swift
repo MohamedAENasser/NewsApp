@@ -58,13 +58,13 @@ class BottomItemView: UIView {
     }
 
     func select() {
-        imageView.tintColor = UIColor.systemBlue
-        titleLabel.textColor = UIColor.systemBlue
+        imageView.tintColor = .tabSelectedColor
+        titleLabel.textColor = .tabSelectedColor
     }
 
     func unSelect() {
-        imageView.tintColor = UIColor.systemGray3
-        titleLabel.textColor = UIColor.black
+        imageView.tintColor = .tabUnSelectedColor
+        titleLabel.textColor = .tabUnSelectedColor
     }
 
     @IBAction func buttonDidPress(_ sender: UIButton) {

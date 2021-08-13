@@ -8,6 +8,10 @@
 import UIKit
 
 extension UIColor {
+    static let backgroundColor = UIColor(named: "BackgroundColor")
+    static let darkBackgroundColor = UIColor(named: "DarkBackgroundColor")
+    static let tabSelectedColor = UIColor(named: "TabSelectedColor")
+    static let tabUnSelectedColor = UIColor(named: "TabUnSelectedColor")
     static let checkBoxSelectedColor = UIColor(named: "CheckBoxSelectedColor")
     static let checkBoxUnSelectedColor = UIColor(named: "CheckBoxUnSelectedColor")
     static let textFieldInputViewColor = UIColor(named: "TextFieldInputViewColor")

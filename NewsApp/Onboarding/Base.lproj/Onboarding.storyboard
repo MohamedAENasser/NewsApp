@@ -91,7 +91,7 @@
                                                     <constraint firstAttribute="height" constant="40" id="Nx6-VK-wfJ"/>
                                                 </constraints>
                                                 <state key="normal" title="Start">
-                                                    <color key="titleColor" name="MainTextColor"/>
+                                                    <color key="titleColor" name="DarkBackgroundColor"/>
                                                 </state>
                                                 <connections>
                                                     <action selector="startButtonDidPress:" destination="BYZ-38-t0r" eventType="touchUpInside" id="wfh-Bt-pbx"/>
@@ -163,6 +163,9 @@
             <color red="0.53333333333333333" green="0.72549019607843135" blue="0.84313725490196079" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="ButtonColor">
+            <color red="0.34934271406881012" green="0.47698789371430189" blue="0.55745188395182299" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="DarkBackgroundColor">
             <color red="0.34934271406881012" green="0.47698789371430189" blue="0.55745188395182299" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="MainTextColor">
