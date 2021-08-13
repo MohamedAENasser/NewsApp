@@ -41,7 +41,7 @@ class ArticleCell: UITableViewCell {
         descriptionLabel.text = model.articleDescription
         sourceLabel.text = "\("dashboard_source_prefix".localized): \(model.source.name)"
         if let cachedImage = cachedImage {
-            articleImageView.image = cachedImage
+            setImage(image: cachedImage)
         } else {
             setupImage(from: model.urlToImage ?? "", completion: completion)
         }
@@ -55,25 +55,25 @@ class ArticleCell: UITableViewCell {
 
     func setupImage(from imageURL: String, completion: @escaping (String, UIImage) -> Void) {
         guard let url = URL(string: imageURL) else {
-            DispatchQueue.main.async {
-                self.articleImageView.image = UIImage(named: "imageNotFound")
-            }
+            setImage(imageName: nil)
             return
         }
 
         URLSession.shared.dataTask(with: url) { data, response, error in
             guard let data = data else {
-                DispatchQueue.main.async {
-                    self.articleImageView.image = UIImage(named: "imageNotFound")
-                }
+                self.setImage(imageName: nil)
                 return
             }
-            DispatchQueue.main.async {
-                guard let image = UIImage(data: data) else { return }
-                self.articleImageView.image = image
-                completion(self.model?.url ?? "", image)
-            }
+            guard let image = UIImage(data: data) else { return }
+            self.setImage(image: image)
+            completion(self.model?.url ?? "", image)
         }.resume()
+    }
+
+    func setImage(imageName: String? = nil, image: UIImage? = nil) {
+        DispatchQueue.main.async {
+            self.articleImageView.image = image ?? UIImage(named: imageName ?? "imageNotFound")
+        }
     }
 
     func setupDate() {
