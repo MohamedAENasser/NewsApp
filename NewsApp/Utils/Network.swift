@@ -30,7 +30,12 @@ struct Network {
         finalHeader["Content-Type"] = "application/json"
         request.allHTTPHeaderFields = finalHeader
 
-        let task = URLSession.shared.dataTask(with: request) { data, response, error in
+        let sessionConfig = URLSessionConfiguration.default
+        sessionConfig.timeoutIntervalForRequest = 3.0
+        sessionConfig.timeoutIntervalForResource = 6.0
+        let session = URLSession(configuration: sessionConfig)
+
+        let task = session.dataTask(with: request) { data, response, error in
             guard let data = data,
                   let model = try? JSONDecoder().decode(NewsModel.self, from: data) else {
                 completion(.failure(error ?? NetworkError.defaultError))
