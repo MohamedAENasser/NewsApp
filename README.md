@@ -7,13 +7,13 @@ In this tutorial you will learn how to get full advantages of NewsApp step by st
 - First go to: https://newsapi.org
 - then create your own API Key.
 - then open XCode project
-- navigate to `RequestConstants` file then set `apiKey` variable to your own key.
+- navigate to enum `Constants` -> `Request` then set `apiKey` variable to your own key.
 
 Now you are ready to run the app.
 
 ## Onboarding
 You should see the Onboarding screen, like the following:
-![](/DocumentationAssets/Onboarding.png)
+![](/DocumentationAssets/Onboarding.png =200x)
 
 ### Selecting Country
 You should select The Country you prefer to get it's latest news.
