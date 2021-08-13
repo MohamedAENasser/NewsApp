@@ -60,7 +60,7 @@
                                         </constraints>
                                     </view>
                                 </subviews>
-                                <color key="backgroundColor" name="DarkBackgroundColor"/>
+                                <color key="backgroundColor" name="DarkBackgroundColor2"/>
                                 <constraints>
                                     <constraint firstItem="4Lw-nj-hUz" firstAttribute="top" secondItem="H4M-Kt-h8p" secondAttribute="top" id="2Ch-CI-kTe"/>
                                     <constraint firstAttribute="height" constant="100" id="2FQ-QW-RKY"/>
@@ -108,8 +108,8 @@
         <namedColor name="BackGroundColor">
             <color red="0.53333333333333333" green="0.72549019607843135" blue="0.84313725490196079" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
-        <namedColor name="DarkBackgroundColor">
-            <color red="0.34934271406881012" green="0.47698789371430189" blue="0.55745188395182299" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        <namedColor name="DarkBackgroundColor2">
+            <color red="0.45165453930057209" green="0.47783159968828914" blue="0.47564312054530222" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <systemColor name="systemGray3Color">
             <color red="0.7803921568627451" green="0.7803921568627451" blue="0.80000000000000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
