@@ -12,15 +12,14 @@ extension DashboardViewController: UISearchBarDelegate {
         searchText = ""
     }
 
-    func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
-        searchText = ""
-    }
-
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         self.searchText = searchText
     }
 
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        if searchText.isEmpty {
+            self.dashboardMode = latestMode
+        }
         network?.fetchNews(
             endPoint: .everything,
             parameters: ["q": searchText]) { [weak self] result in
