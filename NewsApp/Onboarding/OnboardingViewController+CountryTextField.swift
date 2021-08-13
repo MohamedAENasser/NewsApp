@@ -67,7 +67,7 @@ extension OnboardingViewController {
            0..<countries.count ~= selectedRow {
             let index = countries.index(countries.startIndex, offsetBy: selectedRow)
             countriesTextField.text = countries.keys[index]
-            UserDefaults.country = countries.values[index]
+            userDefaults.country = countries.values[index]
         }
     }
 

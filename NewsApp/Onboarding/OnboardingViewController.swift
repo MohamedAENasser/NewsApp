@@ -17,10 +17,10 @@ class OnboardingViewController: UIViewController {
     var pickerView: UIPickerView?
     var toolBar: UIToolbar?
     var countries: [String: String] = [:]
-
+    var userDefaults = UserDefaults.standard
     var selectedCategories: [String] = [] {
         didSet {
-            UserDefaults.favoriteCategories = selectedCategories
+            userDefaults.favoriteCategories = selectedCategories
         }
     }
 
@@ -53,7 +53,7 @@ class OnboardingViewController: UIViewController {
             return
         }
         presentViewController(type: DashboardViewController.self, viewController: .dashboard)
-        UserDefaults.shouldSkipOnboarding = true
+        userDefaults.shouldSkipOnboarding = true
     }
 }
 

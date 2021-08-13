@@ -60,7 +60,7 @@ class DashboardViewController: UIViewController {
         }
 
         dispatchGroup.enter()
-        fetchAllData(categories: UserDefaults.favoriteCategories) {
+        fetchAllData(categories: UserDefaults.standard.favoriteCategories) {
             dispatchGroup.leave()
         }
 
@@ -105,7 +105,7 @@ class DashboardViewController: UIViewController {
     func fetchAllData(categories: [String], completion: @escaping () -> Void) {
         network?.fetchNews(
             headers:["category": categories.first ?? ""],
-            parameters: ["country": UserDefaults.country]
+            parameters: ["country": UserDefaults.standard.country]
         ) { [weak self] result in
             guard let self = self else { return }
             switch result {
