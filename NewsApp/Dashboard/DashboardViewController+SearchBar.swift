@@ -25,13 +25,10 @@ extension DashboardViewController: UISearchBarDelegate {
             endPoint: .everything,
             parameters: ["q": searchText]) { [weak self] result in
             guard let self = self else { return }
-            switch result {
-            case .success(let model):
+            if case .success(let model) = result {
                 self.searchModel = model
                 self.latestMode = self.dashboardMode
                 self.dashboardMode = .search
-            case .failure(let error):
-                print(error.localizedDescription)
             }
         }
     }

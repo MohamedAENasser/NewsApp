@@ -13,7 +13,7 @@ struct Network {
         headers: [String: String] = [:],
         parameters: [String: String] = [:],
         completion: @escaping (Result<NewsModel, Error>) -> Void) {
-        guard let urlComponents = NSURLComponents(string: RequestConstants.baseURL + endPoint.rawValue) else {
+        guard let urlComponents = NSURLComponents(string: Constants.Request.baseURL + endPoint.rawValue) else {
             return
         }
 
@@ -26,7 +26,7 @@ struct Network {
         var request = URLRequest(url: url)
 
         var finalHeader = headers
-        finalHeader["X-Api-Key"] = RequestConstants.apiKey
+        finalHeader["X-Api-Key"] = Constants.Request.apiKey
         finalHeader["Content-Type"] = "application/json"
         request.allHTTPHeaderFields = finalHeader
 

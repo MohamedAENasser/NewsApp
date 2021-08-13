@@ -35,9 +35,7 @@ class BottomItemView: UIView {
     private func commonSetup() {
         let nibView = loadViewFromNib()
         nibView.frame = bounds
-        // the autoresizingMask will be converted to constraints, the frame will match the parent view frame
         nibView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-        // Adding nibView on the top of our view
         addSubview(nibView)
     }
 

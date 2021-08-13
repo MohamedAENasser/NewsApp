@@ -71,7 +71,7 @@
     <resources>
         <image name="tick" width="492" height="492"/>
         <namedColor name="MainTextColor">
-            <color red="0.0685945851745145" green="0.098719032818815861" blue="0.12555545138329571" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.066666666666666666" green="0.098039215686274508" blue="0.12549019607843137" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
 </document>

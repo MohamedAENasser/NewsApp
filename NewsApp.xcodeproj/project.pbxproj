@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		D95164F126C4660A006687C9 /* Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = D95164F026C4660A006687C9 /* Configuration.swift */; };
+		D95D940B26C6C54C006B460B /* UIViewController+presentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D95D940A26C6C54C006B460B /* UIViewController+presentViewController.swift */; };
 		D96A4A0126C4ABD600B4DCB7 /* String+Localized.swift in Sources */ = {isa = PBXBuildFile; fileRef = D96A4A0026C4ABD600B4DCB7 /* String+Localized.swift */; };
 		D96A4A0626C4AE0600B4DCB7 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = D96A4A0826C4AE0600B4DCB7 /* Localizable.strings */; };
 		D96A4A1026C5991C00B4DCB7 /* Dashboard+DataPersistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = D96A4A0F26C5991C00B4DCB7 /* Dashboard+DataPersistence.swift */; };
@@ -42,7 +43,6 @@
 		D9C4CC5626C2F33B00CC519F /* BottomItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9C4CC5526C2F33B00CC519F /* BottomItemView.swift */; };
 		D9C4CC5826C2F34200CC519F /* BottomItemView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D9C4CC5726C2F34200CC519F /* BottomItemView.xib */; };
 		D9FA5E7926C318D0007D92E4 /* DashboardMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9FA5E7826C318D0007D92E4 /* DashboardMode.swift */; };
-		D9FA5E7E26C323CE007D92E4 /* DashboardBackupResponse.json in Resources */ = {isa = PBXBuildFile; fileRef = D9FA5E7D26C323CE007D92E4 /* DashboardBackupResponse.json */; };
 		D9FA5E8026C32805007D92E4 /* DashboardViewController+SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9FA5E7F26C32805007D92E4 /* DashboardViewController+SearchBar.swift */; };
 		D9FA5E8226C32B77007D92E4 /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9FA5E8126C32B77007D92E4 /* Network.swift */; };
 		D9FA5E8426C32BCA007D92E4 /* UIViewController+hideKeyboardWhenTappedAround.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9FA5E8326C32BCA007D92E4 /* UIViewController+hideKeyboardWhenTappedAround.swift */; };
@@ -68,6 +68,7 @@
 
 /* Begin PBXFileReference section */
 		D95164F026C4660A006687C9 /* Configuration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Configuration.swift; sourceTree = "<group>"; };
+		D95D940A26C6C54C006B460B /* UIViewController+presentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+presentViewController.swift"; sourceTree = "<group>"; };
 		D96A49FD26C4A93700B4DCB7 /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/Onboarding.strings; sourceTree = "<group>"; };
 		D96A49FE26C4A96500B4DCB7 /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		D96A4A0026C4ABD600B4DCB7 /* String+Localized.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Localized.swift"; sourceTree = "<group>"; };
@@ -111,7 +112,6 @@
 		D9C4CC5526C2F33B00CC519F /* BottomItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomItemView.swift; sourceTree = "<group>"; };
 		D9C4CC5726C2F34200CC519F /* BottomItemView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BottomItemView.xib; sourceTree = "<group>"; };
 		D9FA5E7826C318D0007D92E4 /* DashboardMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardMode.swift; sourceTree = "<group>"; };
-		D9FA5E7D26C323CE007D92E4 /* DashboardBackupResponse.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = DashboardBackupResponse.json; sourceTree = "<group>"; };
 		D9FA5E7F26C32805007D92E4 /* DashboardViewController+SearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DashboardViewController+SearchBar.swift"; sourceTree = "<group>"; };
 		D9FA5E8126C32B77007D92E4 /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
 		D9FA5E8326C32BCA007D92E4 /* UIViewController+hideKeyboardWhenTappedAround.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+hideKeyboardWhenTappedAround.swift"; sourceTree = "<group>"; };
@@ -182,7 +182,6 @@
 				D986ADA926C1E7D9002B85D2 /* MainViewController.swift */,
 				D986ADA726C1E7C1002B85D2 /* Main.storyboard */,
 				D986AD5B26C15C50002B85D2 /* SceneDelegate.swift */,
-				D9FA5E7D26C323CE007D92E4 /* DashboardBackupResponse.json */,
 				D986AD6226C15C51002B85D2 /* Assets.xcassets */,
 				D96A49FF26C4A98200B4DCB7 /* Localization */,
 				D986AD6426C15C51002B85D2 /* LaunchScreen.storyboard */,
@@ -272,6 +271,7 @@
 			children = (
 				D986ADAF26C1EC38002B85D2 /* UserDefaults+Preferences.swift */,
 				D9FA5E8326C32BCA007D92E4 /* UIViewController+hideKeyboardWhenTappedAround.swift */,
+				D95D940A26C6C54C006B460B /* UIViewController+presentViewController.swift */,
 				D9FA5E8526C34B76007D92E4 /* Date+DifferenceFormat.swift */,
 				D96A4A1126C5994700B4DCB7 /* String+SaveToFile.swift */,
 				D96A4A1726C5E23100B4DCB7 /* UIColor+DarkMode.swift */,
@@ -415,7 +415,6 @@
 				D986AD6326C15C51002B85D2 /* Assets.xcassets in Resources */,
 				D9C4CC5826C2F34200CC519F /* BottomItemView.xib in Resources */,
 				D986ADB626C1F74C002B85D2 /* CategoryView.xib in Resources */,
-				D9FA5E7E26C323CE007D92E4 /* DashboardBackupResponse.json in Resources */,
 				D986AD8C26C19501002B85D2 /* Dashboard.storyboard in Resources */,
 				D96A4A0626C4AE0600B4DCB7 /* Localizable.strings in Resources */,
 				D986ADA826C1E7C1002B85D2 /* Main.storyboard in Resources */,
@@ -467,6 +466,7 @@
 				D9FA5E8426C32BCA007D92E4 /* UIViewController+hideKeyboardWhenTappedAround.swift in Sources */,
 				D986AD9426C19B33002B85D2 /* Constants.swift in Sources */,
 				D9FA5E8626C34B76007D92E4 /* Date+DifferenceFormat.swift in Sources */,
+				D95D940B26C6C54C006B460B /* UIViewController+presentViewController.swift in Sources */,
 				D9FA5E8226C32B77007D92E4 /* Network.swift in Sources */,
 				D986ADBA26C1FB58002B85D2 /* OnboardingViewController+CountryTextField.swift in Sources */,
 				D986ADB426C1F747002B85D2 /* CategoryView.swift in Sources */,

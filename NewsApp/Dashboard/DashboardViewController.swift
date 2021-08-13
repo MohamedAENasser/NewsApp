@@ -18,7 +18,8 @@ class DashboardViewController: UIViewController {
     var newsModel: NewsModel?
     var favoritesModel: [ArticleModel] = [] {
         didSet {
-            saveResponse(model: favoritesModel, to: FilesNamesConstants.latestFavoritesResponse)
+            // Saving the whole object not only URLs as it's not guaranteed that same article will be fetched in the future
+            saveResponse(model: favoritesModel, to: Constants.FilesNames.latestFavoritesResponse)
             if dashboardMode == .favorite {
                 reloadTableView()
             }
@@ -53,7 +54,7 @@ class DashboardViewController: UIViewController {
 
         dispatchGroup.enter()
         retrieveResponse(
-            from: FilesNamesConstants.latestFavoritesResponse, type: [ArticleModel].self) { model in
+            from: Constants.FilesNames.latestFavoritesResponse, type: [ArticleModel].self) { model in
             favoritesModel = model ?? []
             dispatchGroup.leave()
         }
@@ -90,7 +91,7 @@ class DashboardViewController: UIViewController {
         let articleCell = UINib(nibName: "ArticleCell",
                                 bundle: .main)
         tableView.register(articleCell,
-                           forCellReuseIdentifier: UIConstants.articleCellID)
+                           forCellReuseIdentifier: Constants.UI.articleCellID)
     }
 
     func reloadTableView() {
@@ -117,7 +118,7 @@ class DashboardViewController: UIViewController {
                     self.newsModel?.articles = sortedUniqueArray
                 }
             case .failure(_):
-                self.retrieveResponse(from: FilesNamesConstants.latestResponse, type: NewsModel.self) { [weak self] model in
+                self.retrieveResponse(from: Constants.FilesNames.latestResponse, type: NewsModel.self) { [weak self] model in
                     guard let self = self,
                           let model = model else {
                         return
@@ -132,7 +133,7 @@ class DashboardViewController: UIViewController {
             if categories.isEmpty {
                 if let newsModel = self.newsModel {
                     DispatchQueue.global(qos: .background).async {
-                        self.saveResponse(model: newsModel, to: FilesNamesConstants.latestResponse)
+                        self.saveResponse(model: newsModel, to: Constants.FilesNames.latestResponse)
                     }
                 }
                 completion()

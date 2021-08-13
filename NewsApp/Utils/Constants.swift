@@ -7,17 +7,19 @@
 
 import Foundation
 
-enum RequestConstants {
-    static let baseURL = "https://newsapi.org/v2/"
-    static let apiKey = "129a771d60bf4d90b76433f9539cd006"
-}
+enum Constants {
+    enum Request {
+        static let baseURL = "https://newsapi.org/v2/"
+        static let apiKey = ""
+    }
 
-enum UIConstants {
-    static let articleCellID = "ArticleCellID"
-}
+    enum UI {
+        static let articleCellID = "ArticleCellID"
+    }
 
-enum FilesNamesConstants {
-    static let latestResponse = "DashboardLatestResponseCache"
-    static let latestFavoritesResponse = "latestFavoritesResponseCache"
-    static let localResponse = "DashboardBackupResponse"
+    enum FilesNames {
+        static let latestResponse = "DashboardLatestResponseCache"
+        static let latestFavoritesResponse = "latestFavoritesResponseCache"
+    }
+
 }

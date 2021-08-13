@@ -20,7 +20,7 @@ extension DashboardViewController: UITableViewDataSource {
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: UIConstants.articleCellID) as? ArticleCell else {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: Constants.UI.articleCellID) as? ArticleCell else {
             return UITableViewCell()
         }
         var article = ArticleModel()
