@@ -52,7 +52,7 @@ class OnboardingViewController: UIViewController {
         if !countryWarningLabel.isHidden || !categoriesWarningLabel.isHidden {
             return
         }
-        presentDashboardViewController()
+        presentViewController(type: DashboardViewController.self, viewController: .dashboard)
         UserDefaults.shouldSkipOnboarding = true
     }
 }

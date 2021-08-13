@@ -11,30 +11,22 @@ class MainViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         if UserDefaults.shouldSkipOnboarding {
-            presentDashboardViewController()
+            presentViewController(type: DashboardViewController.self, viewController: .dashboard)
         } else {
-            presentOnboardingViewController()
+            presentViewController(type: OnboardingViewController.self, viewController: .onboarding)
         }
     }
 }
 
 extension UIViewController {
-    func presentOnboardingViewController() {
-        let storyboard = UIStoryboard(name: "Onboarding", bundle: .main)
+    func presentViewController<T: UIViewController>(
+        type: T.Type,
+        viewController: ViewControllersTypes,
+        viewControllerID: String = String(describing: T.self)
+    ) {
+        let storyboard = UIStoryboard(name: viewController.rawValue, bundle: .main)
 
-        guard let onboardingViewController = storyboard.instantiateViewController(withIdentifier: "OnboardingViewController") as? OnboardingViewController else {
-            return
-        }
-        onboardingViewController.modalPresentationStyle = .fullScreen
-        DispatchQueue.main.async {
-            self.present(onboardingViewController, animated: true, completion: nil)
-        }
-    }
-
-    func presentDashboardViewController() {
-        let storyboard = UIStoryboard(name: "Dashboard", bundle: .main)
-
-        guard let newsViewController = storyboard.instantiateViewController(withIdentifier: "DashboardViewController") as? DashboardViewController else {
+        guard let newsViewController = storyboard.instantiateViewController(withIdentifier: viewControllerID) as? T else {
             return
         }
         newsViewController.modalPresentationStyle = .fullScreen
@@ -42,4 +34,9 @@ extension UIViewController {
             self.present(newsViewController, animated: true, completion: nil)
         }
     }
+}
+
+enum ViewControllersTypes: String {
+    case onboarding = "Onboarding"
+    case dashboard = "Dashboard"
 }
