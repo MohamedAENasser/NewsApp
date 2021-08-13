@@ -13,7 +13,7 @@ Now you are ready to run the app.
 
 ## Onboarding
 You should see the Onboarding screen, like the following:
-![](/DocumentationAssets/Onboarding.png =200x)
+<img src="/DocumentationAssets/Onboarding.png" width="250" height="500">
 
 ### Selecting Country
 You should select The Country you prefer to get it's latest news.
@@ -26,13 +26,13 @@ After that you should select only 3 categories you prefer to get their related n
 Click on Start Button, if all went well you should be navigated successfully to the Dashboard.
 
 if you missed any of these steps, you will see warning with missing step like the following:
-![](/DocumentationAssets/OnboardingWarnings.png)
+<img src="/DocumentationAssets/OnboardingWarnings.png" width="250" height="500">
 
 Note: Once you are navigated to the dashboard, the Onboarding screen will never be shown again.
 
 ## Dashboard
 In Dashboard you will see latest news headlines, something like this:
-![](/DocumentationAssets/Dashboard.png)
+<img src="/DocumentationAssets/Dashboard.png" width="250" height="500">
 
 ### Dashboard Screen Content
 The Dashboard screen have the following items:
@@ -44,13 +44,13 @@ The Dashboard screen have the following items:
 The card contains the title, image and short description, to see full article you should click on the card and you will be navigated to safari with the full details related to this article.
 
 also, you can add this article to favorites by tapping on the button in the very bottom section of the card, like the following:
-![](/DocumentationAssets/DashboardFavorites.png)
+<img src="/DocumentationAssets/DashboardFavorites.png" width="250" height="500">
 
 ### Search bar
 At the very top of Dashboard there is a searchBar allows to to search any article with a specific keyword, you will need to type as many words as you want then click on search button on the keyboard to see the results, like the following:
-![](/DocumentationAssets/DashboardSearch.png)
+<img src="/DocumentationAssets/DashboardSearch.png" width="250" height="500">
 
 ### Bottom Tabs
 At the bottom of Dashboard you will see two tabs to control presented news, `Home` tab is selected by default.
 When you select `Favorites` tab you will only see the news that you marked as a favorites, like this:
-![](/DocumentationAssets/DashboardFavoritesTab.png)
+<img src="/DocumentationAssets/DashboardFavoritesTab.png" width="250" height="500">
