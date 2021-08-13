@@ -40,10 +40,11 @@ extension DashboardViewController: UITableViewDataSource {
             }
             article = searchModel.articles[indexPath.row]
         }
+        let isFavorite = favoritesModel.map { $0.url }.contains(article.url)
         cell.setup(
             with: article,
             cachedImage: imagesCache.object(forKey: NSString(string: article.url ?? "")),
-            isFavorite: favoritesModel.contains(article),
+            isFavorite: isFavorite,
             delegate: self) { [weak self] key, image in
             guard let self = self else { return }
             self.imagesCache.setObject(image, forKey: NSString(string: key))

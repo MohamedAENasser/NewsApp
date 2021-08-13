@@ -18,5 +18,6 @@ enum UIConstants {
 
 enum FilesNamesConstants {
     static let latestResponse = "DashboardLatestResponseCache"
+    static let latestFavoritesResponse = "latestFavoritesResponseCache"
     static let localResponse = "DashboardBackupResponse"
 }

@@ -18,6 +18,7 @@ class DashboardViewController: UIViewController {
     var newsModel: NewsModel?
     var favoritesModel: [ArticleModel] = [] {
         didSet {
+            saveResponse(model: favoritesModel, to: FilesNamesConstants.latestFavoritesResponse)
             if dashboardMode == .favorite {
                 reloadTableView()
             }
@@ -48,10 +49,22 @@ class DashboardViewController: UIViewController {
         registerCell()
         tableView.estimatedRowHeight = UIScreen.main.bounds.height
         tableView.rowHeight = UITableView.automaticDimension
+        let dispatchGroup = DispatchGroup()
+
+        dispatchGroup.enter()
+        retrieveResponse(
+            from: FilesNamesConstants.latestFavoritesResponse, type: [ArticleModel].self) { model in
+            favoritesModel = model ?? []
+            dispatchGroup.leave()
+        }
+
+        dispatchGroup.enter()
         fetchAllData(categories: UserDefaults.favoriteCategories) {
-            DispatchQueue.main.async {
-                self.tableView.reloadData()
-            }
+            dispatchGroup.leave()
+        }
+
+        dispatchGroup.notify(queue: .main) {
+            self.tableView.reloadData()
         }
     }
 
@@ -99,12 +112,12 @@ class DashboardViewController: UIViewController {
                 if self.newsModel == nil {
                     self.newsModel = model
                 } else {
-                    let newArr = Array(Set(self.newsModel?.articles ?? [] + model.articles)).sorted(by: { ($0.publishedAt ?? "") > ($1.publishedAt ?? "") })
+                    let sortedUniqueArray = Array(Set(self.newsModel?.articles ?? [] + model.articles)).sorted(by: { ($0.publishedAt ?? "") > ($1.publishedAt ?? "") })
 
-                    self.newsModel?.articles = newArr
+                    self.newsModel?.articles = sortedUniqueArray
                 }
             case .failure(_):
-                self.retrieveResponse(from: FilesNamesConstants.latestResponse) { [weak self] model in
+                self.retrieveResponse(from: FilesNamesConstants.latestResponse, type: NewsModel.self) { [weak self] model in
                     guard let self = self,
                           let model = model else {
                         return
@@ -119,7 +132,7 @@ class DashboardViewController: UIViewController {
             if categories.isEmpty {
                 if let newsModel = self.newsModel {
                     DispatchQueue.global(qos: .background).async {
-                        self.saveResponse(model: newsModel)
+                        self.saveResponse(model: newsModel, to: FilesNamesConstants.latestResponse)
                     }
                 }
                 completion()

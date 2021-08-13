@@ -9,9 +9,6 @@ import UIKit
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
-
-
-
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Stop default URL cache and use customized one inside dashboard logic
         URLCache.shared.diskCapacity = 0
@@ -33,6 +30,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Use this method to release any resources that were specific to the discarded scenes, as they will not return.
     }
 
-
+    func applicationWillTerminate(_ application: UIApplication) {
+    }
 }
 

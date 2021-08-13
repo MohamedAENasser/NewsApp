@@ -54,7 +54,7 @@ class ArticleModel: NSObject, Codable, NSCoding {
         coder.encode(source, forKey: ArticleModelKeys.source)
         coder.encode(author, forKey: ArticleModelKeys.author)
         coder.encode(title, forKey: ArticleModelKeys.title)
-        coder.encode(description, forKey: ArticleModelKeys.description)
+        coder.encode(articleDescription, forKey: ArticleModelKeys.description)
         coder.encode(url, forKey: ArticleModelKeys.url)
         coder.encode(urlToImage, forKey: ArticleModelKeys.urlToImage)
         coder.encode(publishedAt, forKey: ArticleModelKeys.publishedAt)
