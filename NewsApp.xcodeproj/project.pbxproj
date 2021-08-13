@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		D95164F126C4660A006687C9 /* Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = D95164F026C4660A006687C9 /* Configuration.swift */; };
 		D95D940B26C6C54C006B460B /* UIViewController+presentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D95D940A26C6C54C006B460B /* UIViewController+presentViewController.swift */; };
+		D95D940E26C6CB78006B460B /* UserDefaultsMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = D95D940D26C6CB78006B460B /* UserDefaultsMock.swift */; };
 		D96A4A0126C4ABD600B4DCB7 /* String+Localized.swift in Sources */ = {isa = PBXBuildFile; fileRef = D96A4A0026C4ABD600B4DCB7 /* String+Localized.swift */; };
 		D96A4A0626C4AE0600B4DCB7 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = D96A4A0826C4AE0600B4DCB7 /* Localizable.strings */; };
 		D96A4A1026C5991C00B4DCB7 /* Dashboard+DataPersistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = D96A4A0F26C5991C00B4DCB7 /* Dashboard+DataPersistence.swift */; };
@@ -61,6 +62,7 @@
 /* Begin PBXFileReference section */
 		D95164F026C4660A006687C9 /* Configuration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Configuration.swift; sourceTree = "<group>"; };
 		D95D940A26C6C54C006B460B /* UIViewController+presentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+presentViewController.swift"; sourceTree = "<group>"; };
+		D95D940D26C6CB78006B460B /* UserDefaultsMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsMock.swift; sourceTree = "<group>"; };
 		D96A49FD26C4A93700B4DCB7 /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/Onboarding.strings; sourceTree = "<group>"; };
 		D96A49FE26C4A96500B4DCB7 /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		D96A4A0026C4ABD600B4DCB7 /* String+Localized.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Localized.swift"; sourceTree = "<group>"; };
@@ -175,6 +177,7 @@
 			children = (
 				D986AD7026C15C52002B85D2 /* OnboardingTests.swift */,
 				D986AD7226C15C52002B85D2 /* Info.plist */,
+				D95D940D26C6CB78006B460B /* UserDefaultsMock.swift */,
 			);
 			path = NewsAppTests;
 			sourceTree = "<group>";
@@ -421,6 +424,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D95D940E26C6CB78006B460B /* UserDefaultsMock.swift in Sources */,
 				D986AD7126C15C52002B85D2 /* OnboardingTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -10,6 +10,7 @@ import XCTest
 
 class OnboardingTests: XCTestCase {
     var onboardingVC: OnboardingViewController!
+    var userDefaultsMock: UserDefaultsMock!
     let categories = Configuration.availableCategories
 
     override func setUp() {
@@ -19,11 +20,14 @@ class OnboardingTests: XCTestCase {
             XCTFail("Can't instantiate Onboarding View Controller")
             return
         }
-        self.onboardingVC = onboardingViewController
+        onboardingVC = onboardingViewController
+        userDefaultsMock = UserDefaultsMock()
+        onboardingVC.userDefaults = userDefaultsMock.standard
         _ = onboardingVC.view
     }
 
     override func tearDown() {
+        userDefaultsMock.clear()
         onboardingVC = nil
     }
 
@@ -78,6 +82,7 @@ class OnboardingTests: XCTestCase {
         XCTAssertFalse(onboardingVC.categoriesWarningLabel.isHidden)
     }
 
+    // Test Country must be selected
     func testCountryWarning() {
         tapOnCategories(with: [categories[0], categories[1], categories[2]])
         onboardingVC.startButtonDidPress(UIButton())
@@ -85,11 +90,47 @@ class OnboardingTests: XCTestCase {
         XCTAssertTrue(onboardingVC.categoriesWarningLabel.isHidden)
     }
 
-    func testCategoriesWarning() {
+    // Test categories must be 3 selected
+    func testCategoriesWarningWithNoSelection() {
         onboardingVC.countriesTextField.text = "Egypt"
         onboardingVC.startButtonDidPress(UIButton())
         XCTAssertTrue(onboardingVC.countryWarningLabel.isHidden)
         XCTAssertFalse(onboardingVC.categoriesWarningLabel.isHidden)
+    }
+
+    // Test categories must be 3 selected
+    func testCategoriesWarningWithOnceSelection() {
+        onboardingVC.countriesTextField.text = "Egypt"
+        tapOnCategories(with: [categories[0]])
+        onboardingVC.startButtonDidPress(UIButton())
+        XCTAssertTrue(onboardingVC.countryWarningLabel.isHidden)
+        XCTAssertFalse(onboardingVC.categoriesWarningLabel.isHidden)
+    }
+
+    // Test categories must be 3 selected
+    func testCategoriesWarningWithTwoSelections() {
+        onboardingVC.countriesTextField.text = "Egypt"
+        tapOnCategories(with: [categories[0], categories[1]])
+        onboardingVC.startButtonDidPress(UIButton())
+        XCTAssertTrue(onboardingVC.countryWarningLabel.isHidden)
+        XCTAssertFalse(onboardingVC.categoriesWarningLabel.isHidden)
+    }
+
+    // Test categories must be 3 selected
+    func testCategoriesWarningWithThreeSelections() {
+        onboardingVC.countriesTextField.text = "Egypt"
+        tapOnCategories(with: [categories[0], categories[1], categories[2]])
+        onboardingVC.startButtonDidPress(UIButton())
+        XCTAssertTrue(onboardingVC.countryWarningLabel.isHidden)
+        XCTAssertTrue(onboardingVC.categoriesWarningLabel.isHidden)
+    }
+
+    func testAppearingOnce() {
+        XCTAssertFalse(onboardingVC.userDefaults.shouldSkipOnboarding)
+        onboardingVC.countriesTextField.text = "Egypt"
+        tapOnCategories(with: [categories[0], categories[1], categories[2]])
+        onboardingVC.startButtonDidPress(UIButton())
+        XCTAssertTrue(onboardingVC.userDefaults.shouldSkipOnboarding)
     }
 
     // Helper Methods
